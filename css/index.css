@@ -6,6 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: #2A2829;
+    background-color: #FAFAFA;
 }
 
 header {
@@ -57,8 +59,142 @@ nav ul {
 }
 
 /* Botón iniciar sesión */
-nav li:nth-child(2) .btn {
+.btn-secondary {
     color: #46E551;
     background-color: white;
     border: 1.5px solid #46E551;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 80px 40px 80px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #38C742;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #1A1A1A;
+}
+
+.hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #8C8C8C;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* ESTADÍSTICAS */
+.stats {
+    display: flex;
+    gap: 40px;
+}
+
+.stat-item h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2FB839;
+    margin-bottom: 4px;
+}
+
+.stat-item p {
+    font-size: 12px;
+    color: #A0A0A0;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 520px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 32px;
+}
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+footer h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #9E9E9E;
+    margin-bottom: 24px;
+}
+
+footer h2, footer p {
+    padding-left: 80px;
+}
+
+/* TARJETAS VERDES DEL FOOTER */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 80px;
+}
+
+.card {
+    background-color: #46E551;
+    border-radius: 20px;
+    padding: 30px 24px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    cursor: pointer;
+}
+.card:hover {
+    box-shadow: 0 8px 20px rgba(70, 229, 81, 0.3);
+}
+
+.card-icon {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 700;
 }
