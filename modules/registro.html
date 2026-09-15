@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro</title>
+<link rel="stylesheet" href="registro.css">
+</head>
+
+<body>
+
+    <div class="page">
+        <header class="header">
+            <div class="logo-group">
+                <div class="logo-icon">
+                    🐾
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">PawSpa</span>
+                    <span class="logo-subtitle">VOLUNTARIOS</span>
+                </div>
+            </div>
+            <nav>
+                <a href="registro.html" class="nav-register">
+                    Registrarse
+                </a>
+                <a href="iniciarsesion.html" class="nav-login">
+                    Iniciar sesión
+                </a>
+            </nav>
+        </header>
+        <main class="main">
+
+            <section class="signup-card">
+
+                <div class="brand-header">
+
+                    <h1>Crear una cuenta</h1>
+
+                    <p>
+                        Únete a nuestra comunidad de voluntarios
+                    </p>
+
+                </div>
+
+                <form class="form" id="registroForm">
+
+                    <div class="form-row">
+
+                        <div class="field">
+                            <label for="nombre">
+                                Nombre completo
+                            </label>
+
+                            <div class="input-box">
+                                <span class="input-icon">👤</span>
+
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    placeholder="Tu nombre completo"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <label for="email">
+                                Correo electrónico
+                            </label>
+
+                            <div class="input-box">
+                                <span class="input-icon">✉</span>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tu@email.com"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="field">
+                            <label for="telefono">
+                                Número de teléfono
+                            </label>
+
+                            <div class="input-box">
+                                <span class="input-icon">☎</span>
+
+                                <input
+                                    type="tel"
+                                    id="telefono"
+                                    name="telefono"
+                                    placeholder="300 123 4567"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <label for="nacimiento">
+                                Año de nacimiento
+                            </label>
+
+                            <div class="input-box">
+                                <span class="input-icon">▣</span>
+
+                                <input
+                                    type="number"
+                                    id="nacimiento"
+                                    name="nacimiento"
+                                    placeholder="Ej. 2000"
+                                    min="1900"
+                                    max="2026"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="field">
+                            <label for="ciudad">
+                                Ciudad
+                            </label>
+
+                            <div class="input-box">
+                                <span class="input-icon">🌐</span>
+
+                                <input
+                                    type="text"
+                                    id="ciudad"
+                                    name="ciudad"
+                                    placeholder="Tu ciudad"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="field">
+                            <label for="password">
+                                Contraseña
+                            </label>
+
+                            <div class="input-box">
+                                <span class="input-icon">🔒</span>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Crea una contraseña"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="eye-button"
+                                    onclick="mostrarPassword()"
+                                >
+                                    👁
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="terms">
+                        Al registrarte aceptas nuestros
+                        <a href="#">Términos y condiciones</a>
+                        y
+                        <a href="#">Política de privacidad</a>.
+                    </p>
+
+                    <button type="submit" class="submit-button">
+                        Crear cuenta
+                    </button>
+
+                </form>
+
+                <div class="separator">
+
+                    <span></span>
+
+                    <p>O REGÍSTRATE CON</p>
+
+                    <span></span>
+
+                </div>
+
+                <div class="social-group">
+
+                    <button type="button" class="social-button">
+                        <strong>G</strong>
+                        Google
+                    </button>
+
+                    <button type="button" class="social-button">
+                        <strong>●</strong>
+                        Apple
+                    </button>
+
+                </div>
+
+                <div class="footer-group">
+
+                    <span>
+                        ¿Ya tienes una cuenta?
+                    </span>
+
+                    <a href="login.html">
+                        Inicia sesión
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+
+            © 2026 PawSpa Voluntarios.
+            Creado con amor para los animales sin hogar.
+
+        </footer>
+
+    </div>
+
+
+    <script>
+    </script>
+
+</body>
+</html>
