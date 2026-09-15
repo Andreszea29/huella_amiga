@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada de Vacunación</title>
+    <link rel="stylesheet" href="../css/vacunacion.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de la página">
+        
+        <nav>
+            <ul>
+                <li>
+                    <a href="" class="btn btn-secondary">Iniciar sesión</a>
+                </li>
+                <li>
+                    <a href="/modules/registro.html" class="btn btn-primary">Registrarse</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Sección Principal / Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">CAMPAÑA DE SALUD NACIONAL 2026</span>
+                <h1>¡Inscríbe a tu mascota para la Jornada de Vacunación! 💉</h1>
+                <p class="hero-description">
+                    Completa este formulario para reservar tu cita. Recopilamos información básica para asegurar una atención segura y personalizada para tu mascota.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>Gratis</h3>
+                        <p>Todas las dosis básicas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>+3,000</h3>
+                        <p>Mascotas protegidas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Profesional</h3>
+                        <p>Veterinarios certificados</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../imagenes/vacuna.png" alt="Atención veterinaria a perro">
+            </div>
+        </section>
+
+        <!-- Formulario de inscripción -->
+        <section class="form-section">
+            <div class="form-header">
+                <h2>Formulario de inscripción</h2>
+                <p>Completa los datos de contacto y de tu mascota para agendar tu cita.</p>
+            </div>
+
+            <form class="form-card">
+                <!-- Datos de contacto -->
+                <div class="form-group-section">
+                    <h3>Datos de contacto</h3>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre-dueno">Nombre del dueño</label>
+                            <input type="text" id="nombre-dueno" placeholder="Ej. María Pérez">
+                        </div>
+                        <div class="field">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" placeholder="Ej. +51 999 888 777">
+                        </div>
+                    </div>
+                    <div class="form-row full-width">
+                        <div class="field">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" placeholder="Ej. maria@email.com">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <!-- Datos de la mascota -->
+                <div class="form-group-section">
+                    <h3>Datos de la mascota</h3>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre-mascota">Nombre de la mascota</label>
+                            <input type="text" id="nombre-mascota" placeholder="Ej. Luna">
+                        </div>
+                        <div class="field">
+                            <label for="tipo-mascota">Tipo de mascota</label>
+                            <select id="tipo-mascota">
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row three-cols">
+                        <div class="field">
+                            <label for="raza">Raza</label>
+                            <input type="text" id="raza" placeholder="Ej. Golden Retriever">
+                        </div>
+                        <div class="field">
+                            <label for="edad">Edad</label>
+                            <input type="text" id="edad" placeholder="Ej. 2 años">
+                        </div>
+                        <div class="field">
+                            <label for="peso">Peso aproximado</label>
+                            <input type="text" id="peso" placeholder="Ej. 12 kg">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <!-- Tipo de vacunación -->
+                <div class="form-group-section">
+                    <h3>Tipo de vacunación</h3>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Rabia
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Parvovirus
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Moquillo
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Triple Felina
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Desparasitación
+                        </label>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <!-- Preferencia de cita -->
+                <div class="form-group-section">
+                    <h3>Preferencia de cita</h3>
+                    <div class="form-row">
+                        <div class="field input-icon">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" id="fecha" value="2026-10-15">
+                        </div>
+                        <div class="field input-icon">
+                            <label for="horario">Horario</label>
+                            <select id="horario">
+                                <option value="manana-tarde">Mañana / Tarde</option>
+                                <option value="manana">Mañana (8:00 AM - 12:00 PM)</option>
+                                <option value="tarde">Tarde (2:00 PM - 6:00 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Inscribir Mascota</button>
+                <p class="form-disclaimer">Al enviar, aceptas que revisaremos la disponibilidad y te contactaremos para confirmar la cita.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-contact">Asistencia o dudas adicionales: soporte@huellas.org | Teléfono de contacto: +51 999 888 777</p>
+        <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas sin hogar.</p>
+    </footer>
+
+    <!--conexion a js NO BORRAR y dejar siempre de último -->
+    <script src="../js/index.js"></script>
+</body>
+</html>
