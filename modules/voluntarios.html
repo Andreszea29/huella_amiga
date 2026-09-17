@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntarios</title>
+    <link rel="stylesheet" href="/css/voluntarios.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de la página"id="logo">
+    </header>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="cuidadores">CUIDADORES DISPONIBLES AHORA</p>
+                <h1 class="titulo">¡Encuentra al voluntario <br>perfecto para tu <span class="peludo">peludo!</span></h1>
+                <p class="hero-description">
+                    Solicita un paseador de confianza para que tu mascota disfrute al máximo de un día lleno de ejercicio, cariño y paseos seguros al aire libre. Todos nuestros voluntarios están capacitados.
+                </p>
+
+                <div class="avatars-group">
+                    <div class="avatar-stack">
+                        <img src="https://i.pravatar.cc/40?img=11" alt="Voluntario 1">
+                        <img src="https://i.pravatar.cc/40?img=12" alt="Voluntario 2">
+                        <img src="https://i.pravatar.cc/40?img=13" alt="Voluntario 3">
+                    </div>
+                    <span>Más de 850 paseos felices completados en tu zona</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <span class="floating-badge">🤍 Paseo Seguro Garantizado</span>
+                    <img src="../imagenes/paseador-perros.jpg" alt="Chica paseando perro en el parque">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenido Formulario + Precios -->
+        <div class="content-grid">
+            <!-- Formulario Principal -->
+            <section class="form-section">
+                <div class="form-header">
+                    <span class="step-badge">🐾 PASO 1 DE 2: INFORMACIÓN DEL PASEO</span>
+                    <h2>Formulario de Solicitud</h2>
+                    <p>Registra los datos de tu mascota y la dirección para que un paseador voluntario capacitado pase a recogerle de manera segura.</p>
+                </div>
+
+                <form class="form-card">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre-dueno">Nombre del dueño</label>
+                            <input type="text" id="nombre-dueno" placeholder="Ej. Carlos Mendoza">
+                        </div>
+                        <div class="field">
+                            <label for="telefono">Teléfono de contacto</label>
+                            <input type="tel" id="telefono" placeholder="Ej. +52 55 1234 5678">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre-mascota">Nombre de la mascota</label>
+                            <input type="text" id="nombre-mascota" placeholder="Ej. Max">
+                        </div>
+                        <div class="field">
+                            <label for="raza-mascota">Raza de la mascota</label>
+                            <input type="text" id="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Tamaño de la mascota</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="pequeno"> Pequeño (0-10 kg)
+                            </label>
+                            <label class="radio-card active">
+                                <input type="radio" name="tamano" value="mediano" checked> Mediano (11-25 kg)
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="grande"> Grande (25+ kg)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="direccion">Dirección de recogida</label>
+                        <input type="text" id="direccion" placeholder="Calle Olivo #124, Col. Del Valle, Benito Juárez">
+                    </div>
+
+                    <div class="field">
+                        <label>Elige el horario de paseo</label>
+                        <span class="field-hint">Frecuencia deseada: Todos los días</span>
+                        <div class="days-selector">
+                            <button type="button" class="day-btn active">Lun ✓</button>
+                            <button type="button" class="day-btn active">Mar ✓</button>
+                            <button type="button" class="day-btn active">Mié ✓</button>
+                            <button type="button" class="day-btn active">Jue ✓</button>
+                            <button type="button" class="day-btn active">Vie ✓</button>
+                            <button type="button" class="day-btn">Sáb</button>
+                            <button type="button" class="day-btn">Dom</button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Turnos de paseo disponibles</label>
+                        <div class="shifts-list">
+                            <label class="shift-card active">
+                                <input type="checkbox" checked>
+                                <div>
+                                    <strong>Mañana (7:00 - 9:00)</strong>
+                                    <p>Ideal para comenzar el día con energía.</p>
+                                </div>
+                            </label>
+
+                            <label class="shift-card">
+                                <input type="checkbox">
+                                <div>
+                                    <strong>Tarde (12:00 - 14:00)</strong>
+                                    <p>Excelente descanso a mitad de jornada.</p>
+                                </div>
+                            </label>
+
+                            <label class="shift-card">
+                                <input type="checkbox">
+                                <div>
+                                    <strong>Noche (17:00 - 19:00)</strong>
+                                    <p>Para un sueño reparador y relajación nocturna.</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Sidebar / Tarifas -->
+            <aside class="sidebar">
+                <div class="info-card">
+                    <span class="badge">TARIFAS DE APOYO</span>
+                    <h3>Costos de Servicio</h3>
+                    <p class="card-subtitle">Las cuotas cubren insumos, premios y el seguro de voluntario.</p>
+
+                    <div class="plans-list">
+                        <!-- Plan 1 -->
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <span class="plan-icon">⭐</span>
+                                <button type="button" class="btn-select">Seleccionar</button>
+                            </div>
+                            <h4>Paseo Único</h4>
+                            <p>1 paseo de 1 hora</p>
+                            <span class="plan-price">$10.000 COP</span>
+                        </div>
+
+                        <!-- Plan 2 (Seleccionado) -->
+                        <div class="plan-card selected">
+                            <div class="plan-header">
+                                <span class="plan-icon">📋</span>
+                                <span class="badge-selected">SELECCIONADO</span>
+                            </div>
+                            <h4>Paquete Semanal</h4>
+                            <p>7 días de paseos diarios</p>
+                            <div class="plan-footer">
+                                <span class="plan-price">$55.000 COP</span>
+                                <span class="badge-active">Elegido</span>
+                            </div>
+                        </div>
+
+                        <!-- Plan 3 -->
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <span class="plan-icon">📅</span>
+                                <button type="button" class="btn-select">Seleccionar</button>
+                            </div>
+                            <h4>Paquete Mensual</h4>
+                            <p>30 días de paseos continuos</p>
+                            <span class="plan-price">$180.000 COP</span>
+                        </div>
+                    </div>
+
+                    <div class="cost-total">
+                        <div>
+                            <strong>Total estimado:</strong>
+                            <p>Pago seguro al confirmar tu paseador asignado.</p>
+                        </div>
+                        <span class="total-price">$55.000 COP</span>
+                    </div>
+                </div>
+
+                <!-- Beneficios -->
+                <div class="info-card">
+                    <h3>¿Qué incluye cada paseo?</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Seguimiento GPS del recorrido en tiempo real.</li>
+                        <li>✓ Fotografías y reporte de hidratación al finalizar.</li>
+                        <li>✓ Snacks saludables e hidratación garantizados.</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Botón Solicitar -->
+        <div class="submit-wrapper">
+            <button type="submit" class="btn-submit">Solicitar Voluntario ➔</button>
+            <p class="disclaimer">Al enviar tu solicitud, buscaremos un paseador compatible en tu zona. El servicio está sujeto a disponibilidad geográfica y de cupos de voluntarios PawSpa.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-copy">© 2026 PawSpa Paseadores. Creado con amor para los animales de casa y sin hogar.</p>
+    </footer>
+
+    <!--conexion a js NO BORRAR y dejar siempre de último -->
+    <script src="/js/general.js"></script>
+</body>
+</html>
