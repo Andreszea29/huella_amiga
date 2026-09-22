@@ -1,242 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Registro</title>
-<link rel="stylesheet" href="/css/registro.css">
-<link rel="stylesheet" href="/css/index.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Registro</title>
+  <link rel="stylesheet" href="../css/registro.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
-    <div class="page">
-        <header>
-        <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
-        <nav>
-            <ul>
-                <li>
-                    <a href="/modules/iniciarsesion.html" class="btn btn-secondary">Iniciar sesión</a>
-                </li>
-            </ul>
-        </nav>
+  <div class="page">
+    <header>
+      <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
+      <nav>
+        <ul>
+          <li>
+            <a href="/modules/iniciarsesion.html" class="btn btn-secondary">Iniciar sesión</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-        <main class="main">
+    <main class="main">
 
-            <section class="signup-card">
+      <section class="signup-card">
 
-                <div class="brand-header">
+        <div class="brand-header">
 
-                    <h1>Crear una cuenta</h1>
+          <h1>Crear una cuenta</h1>
 
-                    <p>
-                        Únete a nuestra comunidad de voluntarios
-                    </p>
+          <p>
+            Únete a nuestra comunidad de voluntarios
+          </p>
 
-                </div>
+        </div>
 
-                <form class="form" id="registroForm">
+        <form class="form" id="registroForm">
 
-                    <div class="form-row">
+          <div class="form-row">
 
-                        <div class="field">
-                            <label for="nombre">
-                                Nombre completo
-                            </label>
+            <div class="field">
+              <label for="nombre">
+                Nombre completo
+              </label>
 
-                            <div class="input-box">
-                                <span class="input-icon">👤</span>
+              <div class="input-box">
+                <span class="input-icon">👤</span>
 
-                                <input
-                                    type="text"
-                                    id="nombre"
-                                    name="nombre"
-                                    placeholder="Tu nombre completo"
-                                    required
-                                >
-                            </div>
-                        </div>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+              </div>
+            </div>
 
 
-                        <div class="field">
-                            <label for="email">
-                                Correo electrónico
-                            </label>
+            <div class="field">
+              <label for="email">
+                Correo electrónico
+              </label>
 
-                            <div class="input-box">
-                                <span class="input-icon">✉</span>
+              <div class="input-box">
+                <span class="input-icon">✉</span>
 
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="tu@email.com"
-                                    required
-                                >
-                            </div>
-                        </div>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+            </div>
 
-                    </div>
+          </div>
 
-                    <div class="form-row">
+          <div class="form-row">
 
-                        <div class="field">
-                            <label for="telefono">
-                                Número de teléfono
-                            </label>
+            <div class="field">
+              <label for="telefono">
+                Número de teléfono
+              </label>
 
-                            <div class="input-box">
-                                <span class="input-icon">☎</span>
+              <div class="input-box">
+                <span class="input-icon">☎</span>
 
-                                <input
-                                    type="tel"
-                                    id="telefono"
-                                    name="telefono"
-                                    placeholder="300 123 4567"
-                                    required
-                                >
-                            </div>
-                        </div>
+                <input type="number" id="telefono" name="telefono" placeholder="300 123 4567" required>
+              </div>
+            </div>
 
 
-                        <div class="field">
-                            <label for="nacimiento">
-                                Año de nacimiento
-                            </label>
+            <div class="field">
+              <input type="date" id="nacimiento" name="nacimiento" min="1900-01-01" max="2026-12-31" required>
 
-                            <div class="input-box">
-                                <span class="input-icon">▣</span>
+              <div class="input-box">
+                <span class="input-icon">▣</span>
 
-                                <input
-                                    type="number"
-                                    id="nacimiento"
-                                    name="nacimiento"
-                                    placeholder="Ej. 2000"
-                                    min="1900"
-                                    max="2026"
-                                    required
-                                >
-                            </div>
-                        </div>
+                <input type="date" id="nacimiento" name="nacimiento" placeholder="Ej. 2000" min="1900" max="2026"
+                  required>
+              </div>
+            </div>
 
-                    </div>
+          </div>
 
-                    <div class="form-row">
+          <div class="form-row">
 
-                        <div class="field">
-                            <label for="ciudad">
-                                Ciudad
-                            </label>
+            <div class="field">
+              <label for="ciudad">
+                Ciudad
+              </label>
 
-                            <div class="input-box">
-                                <span class="input-icon">🌐</span>
+              <div class="input-box">
+                <span class="input-icon">🌐</span>
 
-                                <input
-                                    type="text"
-                                    id="ciudad"
-                                    name="ciudad"
-                                    placeholder="Tu ciudad"
-                                    required
-                                >
-                            </div>
-                        </div>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
+              </div>
+            </div>
 
 
-                        <div class="field">
-                            <label for="password">
-                                Contraseña
-                            </label>
+            <div class="field">
+              <label for="password">
+                Contraseña
+              </label>
 
-                            <div class="input-box">
-                                <span class="input-icon">🔒</span>
+              <div class="input-box">
+                <span class="input-icon">🔒</span>
 
-                                <input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    placeholder="Crea una contraseña"
-                                    required
-                                >
+                <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
 
-                                <button
-                                    type="button"
-                                    class="eye-button"
-                                    onclick="mostrarPassword()"
-                                >
-                                    👁
-                                </button>
-                            </div>
-                        </div>
+                <button type="submit" class="submit-button">Crear cuenta</button>
+              </div>
+            </div>
 
-                    </div>
+          </div>
 
-                    <p class="terms">
-                        Al registrarte aceptas nuestros
-                        <a href="/modules/terminos_condiciones.html">Términos y condiciones</a>
-                        y
-                        <a href="/modules/politica_privacidad.html">Política de privacidad</a>.
-                    </p>
+          <p class="terms">
+            Al registrarte aceptas nuestros
+            <a href="/modules/terminos_condiciones.html">Términos y condiciones</a>
+            y
+            <a href="/modules/politica_privacidad.html">Política de privacidad</a>.
+          </p>
 
-                    <button type="submit" class="submit-button">
-                        Crear cuenta
-                    </button>
+          <button type="submit" class="submit-button" onclick="irAInicio(event)">
+            Crear cuenta
+          </button>
 
-                </form>
+        </form>
 
-                <div class="separator">
+        <div class="separator">
 
-                    <span></span>
+          <span></span>
 
-                    <p>O REGÍSTRATE CON</p>
+          <p>O REGÍSTRATE CON</p>
 
-                    <span></span>
+          <span></span>
 
-                </div>
-
-                <div class="social-group">
-
-                    <button type="button" class="social-button">
-                        <strong></strong>
-                        Google
-                    </button>
-
-                    <button type="button" class="social-button">
-                        <strong></strong>
-                        Apple
-                    </button>
-
-                </div>
-
-                <div class="footer-group">
-
-                    <span>
-                        ¿Ya tienes una cuenta?
-                    </span>
-
-                    <a href="iniciarsesion.html">
-                        Inicia sesión
-                    </a>
-
-                </div>
-
-            </section>
-
-        </main>
-
-        <footer class="footer">
-
-            © 2026 PawSpa Voluntarios.
-            Creado con amor para los animales sin hogar.
-
-        </footer>
-
-    </div>
+        </div>
 
 
-    <script>
-    </script>
-<script src="/js/general.js"></script>
-<script src="/js/iniciarsesion.js"></script>
+
+        <div class="footer-group">
+
+          <span>
+            ¿Ya tienes una cuenta?
+          </span>
+
+          <a href="iniciarsesion.html">
+            Inicia sesión
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+
+      © 2026 PawSpa Voluntarios.
+      Creado con amor para los animales sin hogar.
+
+    </footer>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/general.js"></script>
+  <script src="../js/registro.js"></script>
 </body>
+
 </html>
