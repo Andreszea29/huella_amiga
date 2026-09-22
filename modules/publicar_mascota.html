@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Mascota en Adopción</title>
+    <link rel="stylesheet" href="../css/publicar_mascota.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de Huellas">
+        <nav>
+            <ul>
+                <li><a href="adopcion.html">Adopción</a></li>
+                <li><a href="publicar_mascota.html">Publicar Mascota</a></li>
+                <li><a href="voluntarios.html">Voluntariado</a></li>
+                <li><a href="#">Donaciones</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">BUSCA UN HOGAR PARA UN PELUDO</span>
+                <h1 class="titulo">¡Dale una segunda <br>oportunidad a un <br>peludo! 🏠</h1>
+                <p class="hero-description">
+                    Publica los datos de la mascota que necesita un hogar. Nuestro equipo verificará la información y la publicará en nuestro catálogo de adopción para conectar con familias responsables.
+                </p>
+
+                <div class="stats-group">
+                    <span class="stat-pill"><strong>+800</strong> Mascotas publicadas</span>
+                    <span class="stat-pill"><strong>95%</strong> Encuentran hogar</span>
+                    <span class="stat-pill"><strong>48h</strong> Tiempo de revisión</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="../imagenes/publicar_hero.jpg" alt="Gato buscando hogar">
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="form-section">
+                <div class="form-header">
+                    <span class="step-badge">🐾 PASO 1 DE 2 - INFORMACIÓN DE LA MASCOTA</span>
+                    <h2>Publicar Mascota en Adopción</h2>
+                    <p>Completa la información de la mascota y tus datos de contacto. Nuestro equipo revisará la publicación antes de hacerla visible.</p>
+                </div>
+
+                <form class="form-card">
+                    <div class="form-group-title">
+                        <h3>Datos de la mascota</h3>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre-mascota">Nombre de la mascota</label>
+                            <input type="text" id="nombre-mascota" placeholder="Ej. Luna">
+                        </div>
+                        <div class="field">
+                            <label for="raza-mascota">Raza</label>
+                            <input type="text" id="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Tipo de mascota</label>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="tipo_mascota" value="perro" checked> Perro</label>
+                            <label><input type="radio" name="tipo_mascota" value="gato"> Gato</label>
+                            <label><input type="radio" name="tipo_mascota" value="ave"> Ave</label>
+                            <label><input type="radio" name="tipo_mascota" value="hamster"> Hámster</label>
+                            <label><input type="radio" name="tipo_mascota" value="otro"> Otro</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="edad-mascota">Edad</label>
+                            <input type="text" id="edad-mascota" placeholder="Ej. 1.4 años">
+                        </div>
+                        <div class="field">
+                            <label for="peso-mascota">Peso aproximado</label>
+                            <input type="text" id="peso-mascota" placeholder="Ej. 17 kg">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label>Sexo</label>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="sexo" value="macho"> Macho</label>
+                                <label><input type="radio" name="sexo" value="hembra" checked> Hembra</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Tamaño</label>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="tamano" value="pequeno"> Pequeño (0-10kg)</label>
+                                <label><input type="radio" name="tamano" value="mediano" checked> Mediano (11-25kg)</label>
+                                <label><input type="radio" name="tamano" value="grande"> Grande</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label>¿Está esterilizado/a?</label>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="esterilizado" value="si" checked> Sí</label>
+                                <label><input type="radio" name="esterilizado" value="no"> No</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>¿Tiene vacunas al día?</label>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="vacunas" value="si" checked> Sí</label>
+                                <label><input type="radio" name="vacunas" value="no"> No</label>
+                                <label><input type="radio" name="vacunas" value="parcialmente"> Parcialmente</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Temperamento</label>
+                        <div class="checkbox-grid">
+                            <label><input type="checkbox" checked> Juguetón</label>
+                            <label><input type="checkbox"> Tranquilo</label>
+                            <label><input type="checkbox"> Sociable</label>
+                            <label><input type="checkbox"> Tímido</label>
+                            <label><input type="checkbox"> Bueno con niños</label>
+                            <label><input type="checkbox"> Bueno con otras mascotas</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="descripcion-mascota">Descripción de la mascota</label>
+                        <textarea id="descripcion-mascota" rows="4" placeholder="Cuéntanos sobre su personalidad, historia, necesidades especiales..."></textarea>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="form-group-title">
+                        <h3>Fotos de la mascota</h3>
+                    </div>
+
+                    <div class="upload-box">
+                        <div class="upload-icon">📷</div>
+                        <p><strong>Arrastra las fotos aquí o haz clic para seleccionar</strong></p>
+                        <span class="upload-hint">Mínimo 1 foto, máximo 5. Formatos: JPG, PNG. Tamaño máximo: 5MB</span>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="form-group-title">
+                        <h3>Tus datos de contacto</h3>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre-contacto">Nombre completo</label>
+                            <input type="text" id="nombre-contacto" placeholder="Ej. Carlos Mendoza">
+                        </div>
+                        <div class="field">
+                            <label for="correo-contacto">Correo electrónico</label>
+                            <input type="email" id="correo-contacto" placeholder="Ej. carlos@correo.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="telefono-contacto">Teléfono de contacto</label>
+                            <input type="tel" id="telefono-contacto" placeholder="Ej. +51 999 888 777">
+                        </div>
+                        <div class="field">
+                            <label for="ciudad-contacto">Ciudad</label>
+                            <input type="text" id="ciudad-contacto" placeholder="Ej. Lima, Perú">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="motivo-publicacion">Motivo de la publicación</label>
+                        <select id="motivo-publicacion">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="rescatado">Mascota rescatada</option>
+                            <option value="reubicacion">No puedo mantenerla</option>
+                            <option value="otro">Otro motivo</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Confirmo que la información proporcionada es verídica</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Acepto que Huellas verifique y publique esta información</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Me comprometo a mantener a la mascota hasta que sea adoptada</span>
+                        </label>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="sidebar">
+                <div class="info-card green-card">
+                    <h3>Consejos para tu publicación</h3>
+                    <ul class="requirements-list">
+                        <li>✓ Sube fotos claras y bien iluminadas</li>
+                        <li>✓ Describe honestamente el temperamento</li>
+                        <li>✓ Incluye información de salud completa</li>
+                        <li>✓ Menciona si tiene necesidades especiales</li>
+                        <li>✓ Responde rápido a los interesados</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>¿Cómo funciona?</h3>
+                    <div class="timeline">
+                        <div class="step">
+                            <span class="step-num">Paso 1</span>
+                            <strong>Completa el formulario</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 2</span>
+                            <strong>Revisamos tu publicación (48h)</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 3</span>
+                            <strong>Se publica en el catálogo</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 4</span>
+                            <strong>Familias interesadas te contactan</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 5</span>
+                            <strong>¡La mascota encuentra hogar!</strong>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <div class="submit-wrapper">
+            <button type="submit" class="btn-submit">Publicar Mascota ➔</button>
+            <p class="disclaimer">Al publicar, aceptas los términos de servicio. La publicación será revisada antes de aparecer en el catálogo.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-contact">Asistencia o dudas adicionales: soporte@huellas.org | Teléfono de contacto: +51 999 888 777</p>
+        <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas del mundo.</p>
+    </footer>
+
+    <!-- conexion a js NO BORRAR y dejar siempre de último -->
+    <script src="../js/formulario.js"></script>
+    <script src ="general.js"></script>
+</body>
+</html>

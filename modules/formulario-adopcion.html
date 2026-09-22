@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Adopción</title>
+    <link rel="stylesheet" href="../css/formulario-adopcion.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de Huellas">
+        <nav>
+            <ul>
+                <li><a href="adopcion.html">Adopción</a></li>
+                <li><a href="publicar_mascota.html">Publicar Mascota</a></li>
+                <li><a href="voluntarios.html">Voluntariado</a></li>
+                <li><a href="#">Donaciones</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">🐾 ADOPTA UN AMIGO</span>
+                <h1 class="titulo">¡Adopta y cambia una <br>vida! 🐾</h1>
+                <p class="hero-description">
+                    Completa este formulario para iniciar el proceso de adopción de tu nuevo mejor amigo. Revisaremos tu solicitud en un plazo de 48 horas. ¡Tu hogar perfecto te está esperando!
+                </p>
+
+                <div class="stats-group">
+                    <span class="stat-pill"><strong>+500</strong> Adopciones exitosas</span>
+                    <span class="stat-pill"><strong>100%</strong> Seguimiento post-adopción</span>
+                    <span class="stat-pill"><strong>Gratis</strong> Todo el proceso</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <span class="floating-badge">🤍 Amor de verdad</span>
+                    <img src="/imagenes/personaperro.png" alt="Persona abrazando a su perro">
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="form-section">
+                <div class="form-header">
+                    <span class="step-badge">🐾 PASO 1 DE 2</span>
+                    <h2>Formulario de Adopción</h2>
+                    <p>Por favor, ingresa información honesta y detallada sobre tu entorno. Esto nos ayudará a garantizar una transición feliz y segura para la mascota.</p>
+                </div>
+
+                <form class="form-card">
+                    <div class="form-group-title">
+                        <h3>Datos del adoptante</h3>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" placeholder="Ej. Ana María Martínez">
+                        </div>
+                        <div class="field">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" placeholder="Ej. ana@ejemplo.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="telefono">Teléfono de contacto</label>
+                            <input type="tel" id="telefono" placeholder="Ej. +57 300 123 4567">
+                        </div>
+                        <div class="field">
+                            <label for="ciudad">Ciudad de residencia</label>
+                            <input type="text" id="ciudad" placeholder="Ej. Bogotá">
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="form-group-title">
+                        <h3>Sobre tu hogar</h3>
+                    </div>
+
+                    <div class="field">
+                        <label>Tipo de vivienda</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="vivienda" value="casa"> Casa</label>
+                            <label class="radio-option active"><input type="radio" name="vivienda" value="apartamento" checked> Apartamento</label>
+                            <label class="radio-option"><input type="radio" name="vivienda" value="finca"> Finca</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label>¿Tienes patio o jardín?</label>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="patio" value="si" checked> Sí</label>
+                                <label><input type="radio" name="patio" value="no"> No</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>¿Tienes otras mascotas?</label>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="mascotas" value="si" checked> Sí</label>
+                                <label><input type="radio" name="mascotas" value="no"> No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="otras-mascotas">Si respondiste sí, ¿cuáles?</label>
+                        <input type="text" id="otras-mascotas" placeholder="Ej. Un perro criollo de 3 años, un gato siamés">
+                    </div>
+
+                    <div class="field">
+                        <label for="personas-hogar">Número de personas en el hogar</label>
+                        <input type="text" id="personas-hogar" placeholder="Ej. 3">
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="form-group-title">
+                        <h3>Mascota que deseas adoptar</h3>
+                    </div>
+
+                    <div class="field">
+                        <label>Tipo de mascota de preferencia</label>
+                        <div class="radio-group">
+                            <label class="radio-option active"><input type="radio" name="tipo_mascota" value="perro" checked> Perro</label>
+                            <label class="radio-option"><input type="radio" name="tipo_mascota" value="gato"> Gato</label>
+                            <label class="radio-option"><input type="radio" name="tipo_mascota" value="ave"> Ave</label>
+                            <label class="radio-option"><input type="radio" name="tipo_mascota" value="hamster"> Hámster</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label>Preferencia de tamaño</label>
+                            <div class="checkbox-list">
+                                <label><input type="checkbox" checked> Pequeño (0-10 kg)</label>
+                                <label><input type="checkbox" checked> Mediano (11-25 kg)</label>
+                                <label><input type="checkbox"> Grande (25+ kg)</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Preferencia de edad</label>
+                            <div class="checkbox-list">
+                                <label><input type="checkbox" checked> Cachorro (0-1 año)</label>
+                                <label><input type="checkbox" checked> Joven (1-5 años)</label>
+                                <label><input type="checkbox"> Adulto (5+ años)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="mascota-mente">¿Tienes alguna mascota en mente?</label>
+                        <input type="text" id="mascota-mente" placeholder="Ej. Luna">
+                        <span class="field-hint">Si viste una mascota específica en nuestro catálogo, escribe su nombre aquí.</span>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="form-group-title">
+                        <h3>Compromiso y Responsabilidad</h3>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Me comprometo a brindar alimentación adecuada y atención veterinaria oportuna.</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Acepto la visita de seguimiento post-adopción por parte del equipo de Huellas.</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span>Entiendo que la adopción es un compromiso de por vida y que requiere paciencia.</span>
+                        </label>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="sidebar">
+                <div class="info-card green-card">
+                    <span class="badge-mini">VALIDACIÓN OBLIGATORIA</span>
+                    <h3>Requisitos de Adopción</h3>
+                    <ul class="requirements-list">
+                        <li>✓ Ser mayor de 18 años</li>
+                        <li>✓ Presentar identificación oficial vigente</li>
+                        <li>✓ Comprobante de domicilio actual</li>
+                        <li>✓ Compromiso firmado de esterilización</li>
+                        <li>✓ Espacio seguro y adecuado para la mascota</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>¿Qué sigue después?</h3>
+                    <div class="timeline">
+                        <div class="step">
+                            <span class="step-num">Paso 1</span>
+                            <strong>Revisión de solicitud (48h)</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 2</span>
+                            <strong>Entrevista virtual con el equipo</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 3</span>
+                            <strong>Visita presencial al albergue</strong>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">Paso 4</span>
+                            <strong>¡Tu nuevo amigo llega a casa!</strong>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <div class="submit-wrapper">
+            <button type="submit" class="btn-submit">Enviar Solicitud de Adopción ➔</button>
+            <p class="disclaimer">Al enviar tu solicitud, aceptas que revisemos tus datos únicamente para el proceso de validación en el proceso de adopción de Huellas.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-contact">Asistencia o dudas adicionales: soporte@huellas.org | Teléfono de contacto: +51 999 888 777</p>
+        <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas del mundo.</p>
+    </footer>
+
+    <!-- conexion a js NO BORRAR y dejar siempre de último -->
+    <script src="../js/formulario.js"></script>
+    <script src ="general.js"></script>
+</body>
+</html>
