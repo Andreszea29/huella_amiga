@@ -10,12 +10,32 @@ body {
     background-color: #FAFAFA;
 }
 
+.floating-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    backdrop-filter: blur(4px);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
 .cuidadores {
-    background-color: #43c86f61;
+    background-color: #EFEFEF;
     border-radius: 16px;
     padding: 8px 16px;
     display: inline-block;
-    color: #36c365;
+    color: #555555;
     font-size: 11px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -30,7 +50,7 @@ body {
 }
 
 .peludo {
-    color: #46E551;
+    color: #1A1A1A;
     display: inline-block;
 }
 
@@ -92,26 +112,6 @@ body {
     width: 100%;
 }
 
-.floating-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #333;
-    backdrop-filter: blur(4px);
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 24px;
-}
-
 .content-grid {
     display: grid;
     grid-template-columns: 1.8fr 1.2fr;
@@ -122,7 +122,7 @@ body {
 .step-badge {
     font-size: 11px;
     font-weight: 700;
-    color: #38C742;
+    color: #666666;
 }
 
 .form-header h2 {
@@ -202,14 +202,14 @@ body {
 }
 
 .radio-card.active {
-    border-color: #46E551;
-    background-color: #ECFCED;
+    border-color: #333333;
+    background-color: #F5F5F5;
     color: #1A1A1A;
     font-weight: 600;
 }
 
 .radio-card input {
-    accent-color: #46E551;
+    accent-color: #333333;
 }
 
 .days-selector {
@@ -229,9 +229,9 @@ body {
 }
 
 .day-btn.active {
-    background-color: #E2FAD4;
-    border-color: #A3EE86;
-    color: #2FB839;
+    background-color: #EFEFEF;
+    border-color: #333333;
+    color: #1A1A1A;
     font-weight: 700;
 }
 
@@ -253,12 +253,12 @@ body {
 }
 
 .shift-card.active {
-    background-color: #FFFDEE;
-    border-color: #F7E8A4;
+    background-color: #F5F5F5;
+    border-color: #CCCCCC;
 }
 
 .shift-card input {
-    accent-color: #46E551;
+    accent-color: #333333;
     margin-top: 3px;
 }
 
@@ -318,7 +318,7 @@ body {
 }
 
 .plan-card.selected {
-    border: 2px solid #46E551;
+    border: 2px solid #333333;
     background-color: white;
 }
 
@@ -338,7 +338,7 @@ body {
 }
 
 .badge-selected {
-    background-color: #46E551;
+    background-color: #333333;
     color: white;
     font-size: 9px;
     font-weight: 800;
@@ -359,7 +359,7 @@ body {
 .plan-price {
     font-size: 16px;
     font-weight: 800;
-    color: #38C742;
+    color: #1A1A1A;
     display: block;
     margin-top: 6px;
 }
@@ -371,7 +371,7 @@ body {
 }
 
 .badge-active {
-    background-color: #65E28B;
+    background-color: #8C8C8C;
     color: white;
     font-size: 11px;
     padding: 4px 12px;
@@ -396,7 +396,7 @@ body {
 .total-price {
     font-size: 20px;
     font-weight: 800;
-    color: #38C742;
+    color: #1A1A1A;
 }
 
 .benefits-list {
@@ -421,7 +421,7 @@ body {
 }
 
 .btn-submit {
-    background-color: #46E551;
+    background-color: #1A1A1A;
     color: white;
     border: none;
     padding: 14px 48px;
@@ -433,7 +433,7 @@ body {
 }
 
 .btn-submit:hover {
-    background-color: #3bd145;
+    background-color: #333333;
 }
 
 .disclaimer {
@@ -454,12 +454,28 @@ footer {
 }
 
 @media (max-width: 850px) {
-    .hero, .content-grid {
+    .hero {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-description {
+        margin: 16px auto 24px auto;
+    }
+
+    .avatars-group, .hero-image {
+        justify-content: center;
+    }
+
+    .content-grid {
         grid-template-columns: 1fr;
     }
 
-    .form-row, .radio-group {
+    .form-row {
         flex-direction: column;
     }
+
+    header {
+        padding: 0 20px;
+    } 
 }

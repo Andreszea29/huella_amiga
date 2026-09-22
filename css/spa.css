@@ -47,13 +47,14 @@ nav ul {
 
 .btn-primary {
     color: #2A2829;
-    background-color: #ECFCED;
+    background-color: #FAFAFA;
+    border: 1px solid #EFEFEF;
 }
 
 .btn-secondary {
-    color: #46E551;
+    color: #333333;
     background-color: white;
-    border: 1.5px solid #46E551;
+    border: 1.5px solid #EFEFEF;
 }
 
 /* CONTENEDOR */
@@ -79,7 +80,7 @@ nav ul {
 .badge {
     font-size: 11px;
     font-weight: 700;
-    color: #38C742;
+    color: #8C8C8C;
     letter-spacing: 0.5px;
     display: inline-block;
     margin-bottom: 12px;
@@ -144,6 +145,7 @@ nav ul {
     font-size: 12px;
     font-weight: 600;
     color: #333;
+    border: 1px solid #EFEFEF;
     backdrop-filter: blur(4px);
 }
 
@@ -166,7 +168,7 @@ nav ul {
 .form-header .step-badge {
     font-size: 11px;
     font-weight: 700;
-    color: #38C742;
+    color: #8C8C8C;
 }
 
 .form-header h2 {
@@ -237,7 +239,7 @@ nav ul {
 }
 
 .radio-item input {
-    accent-color: #46E551;
+    accent-color: #555555;
 }
 
 /* CHECKBOXES Y HORARIOS */
@@ -271,7 +273,7 @@ nav ul {
 }
 
 .checkbox-item input {
-    accent-color: #46E551;
+    accent-color: #555555;
 }
 
 .mt-16 { margin-top: 16px; }
@@ -311,7 +313,7 @@ nav ul {
 }
 
 .price-free {
-    color: #38C742;
+    color: #666666;
     font-weight: 700;
     font-size: 12px;
 }
@@ -333,15 +335,17 @@ nav ul {
 .total-price {
     font-size: 18px;
     font-weight: 800;
-    color: #38C742;
+    color: #1A1A1A;
 }
 
+/* RECUADRO DE NOTA: AHORA NEUTRO EN LUGAR DE AMARILLO */
 .cost-note {
-    background-color: #FFF9E6;
+    background-color: #FAFAFA;
     padding: 10px;
     border-radius: 8px;
+    border: 1px solid #EFEFEF;
     font-size: 11px;
-    color: #8A6D3B;
+    color: #777777;
     margin-top: 16px;
 }
 
@@ -358,7 +362,7 @@ nav ul {
     line-height: 1.4;
 }
 
-/* BOTÓN DE SUBMIT CENTRAL */
+/* BOTÓN DE SUBMIT CENTRAL: NEGRO/GRIS EN LUGAR DE VERDE CHILLÓN */
 .submit-wrapper {
     display: flex;
     flex-direction: column;
@@ -367,7 +371,7 @@ nav ul {
 }
 
 .btn-submit {
-    background-color: #46E551;
+    background-color: #1A1A1A;
     color: white;
     border: none;
     padding: 14px 48px;
@@ -379,7 +383,7 @@ nav ul {
 }
 
 .btn-submit:hover {
-    background-color: #3bd145;
+    background-color: #333333;
 }
 
 .disclaimer {
