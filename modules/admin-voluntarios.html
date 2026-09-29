@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Voluntarios PawSpa</title>
+    <link rel="stylesheet" href="/css/voluntarios.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/admin-voluntarios.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
+        <span class="admin-badge">PANEL DE CONTROL</span>
+    </header>
+
+    <main class="admin-container">
+        <!-- Sección de Estadísticas Rápidas -->
+        <section class="admin-stats">
+            <div class="stat-card">
+                <h3>Total Voluntarios</h3>
+                <p class="stat-number">24</p>
+            </div>
+            <div class="stat-card">
+                <h3>Paseos Activos Hoy</h3>
+                <p class="stat-number">8</p>
+            </div>
+            <div class="stat-card">
+                <h3>Disponibles Ahora</h3>
+                <p class="stat-number">12</p>
+            </div>
+        </section>
+
+        <!-- Listado de Voluntarios con Botones de Acción -->
+        <section class="admin-section">
+            <div class="section-header">
+                <h2>Gestión de Voluntarios Capacitados</h2>
+                <!-- Botón transformado en enlace que redirige a la página de voluntarios -->
+                <a href="voluntarios.html" class="btn-submit" style="text-decoration: none; display: inline-block; text-align: center; padding: 12px 24px; font-size: 14px;">+ Añadir Voluntario</a>
+            </div>
+
+            <div class="voluntarios-grid">
+                <!-- Voluntario 1 -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <img src="https://i.pravatar.cc/60?img=11" alt="Voluntario" class="admin-avatar">
+                        <span class="badge-active">Disponible</span>
+                    </div>
+                    <h4>Carlos Mendoza</h4>
+                    <p>Tel: +57 300 123 4567</p>
+                    <p>Zona: Centro / Parque</p>
+                    <span class="plan-price" style="font-size: 14px; margin: 10px 0;">42 Paseos completados</span>
+                    
+                    <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
+                        <button type="button" class="day-btn active" style="flex: 1;" onclick="verDetalles(1)">Detalles</button>
+                        <button type="button" class="day-btn" style="flex: 1;" onclick="editarVoluntario(1)">Editar</button>
+                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(1)">Eliminar</button>
+                    </div>
+                </div>
+
+                <!-- Voluntario 2 -->
+                <div class="plan-card selected">
+                    <div class="plan-header">
+                        <img src="https://i.pravatar.cc/60?img=12" alt="Voluntario" class="admin-avatar">
+                        <span class="badge-selected">En Paseo</span>
+                    </div>
+                    <h4>Ana Sofía Gómez</h4>
+                    <p>Tel: +57 310 987 6543</p>
+                    <p>Zona: Norte / Rosales</p>
+                    <span class="plan-price" style="font-size: 14px; margin: 10px 0;">85 Paseos completados</span>
+                    
+                    <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
+                        <button type="button" class="day-btn active" style="flex: 1;" onclick="verDetalles(2)">Detalles</button>
+                        <button type="button" class="day-btn" style="flex: 1;" onclick="editarVoluntario(2)">Editar</button>
+                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(2)">Eliminar</button>
+                    </div>
+                </div>
+
+                <!-- Voluntario 3 -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <img src="https://i.pravatar.cc/60?img=13" alt="Voluntario" class="admin-avatar">
+                        <span class="badge-active">Disponible</span>
+                    </div>
+                    <h4>Mateo Vargas</h4>
+                    <p>Tel: +57 320 456 7890</p>
+                    <p>Zona: Sur / La Colina</p>
+                    <span class="plan-price" style="font-size: 14px; margin: 10px 0;">19 Paseos completados</span>
+                    
+                    <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
+                        <button type="button" class="day-btn active" style="flex: 1;" onclick="verDetalles(3)">Detalles</button>
+                        <button type="button" class="day-btn" style="flex: 1;" onclick="editarVoluntario(3)">Editar</button>
+                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(3)">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-copy">© 2026 PawSpa Paseadores. Módulo exclusivo de Administración.</p>
+    </footer>
+
+    <!-- Conexión a JS (no borrar y dejar de último) -->
+    <script src="../js/general.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

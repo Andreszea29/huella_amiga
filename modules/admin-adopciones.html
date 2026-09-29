@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Solicitudes de Adopción</title>
+    <link rel="stylesheet" href="../css/admin-adopciones.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de Huellas" id="logo">
+        <span class="admin-badge">PANEL DE CONTROL - ADOPCIONES</span>
+    </header>
+
+    <main class="admin-container">
+        <!-- Sección de Estadísticas Rápidas -->
+        <section class="admin-stats">
+            <div class="stat-card">
+                <h3>Solicitudes Totales</h3>
+                <p class="stat-number">38</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pendientes de Revisión</h3>
+                <p class="stat-number">12</p>
+            </div>
+            <div class="stat-card">
+                <h3>Aprobadas este mes</h3>
+                <p class="stat-number">26</p>
+            </div>
+        </section>
+
+        <!-- Listado de Solicitudes con Botones de Acción -->
+        <section class="admin-section">
+            <div class="section-header">
+                <h2>Gestión de Solicitudes de Adopción</h2>
+                <!-- Botón que redirige de vuelta al formulario de adopción -->
+                <a href="formulario-adopcion.html" class="btn-submit" style="text-decoration: none; display: inline-block; text-align: center; padding: 12px 24px; font-size: 14px;">+ Nueva Solicitud</a>
+            </div>
+
+            <div class="voluntarios-grid">
+                <!-- Solicitud 1 -->
+                <div class="plan-card selected">
+                    <div class="plan-header">
+                        <span class="plan-icon">🐾</span>
+                        <span class="badge-selected">Pendiente (48h)</span>
+                    </div>
+                    <h4>Ana María Martínez</h4>
+                    <p><strong>Correo:</strong> ana@ejemplo.com</p>
+                    <p><strong>Tel:</strong> +57 300 123 4567 | Bogotá</p>
+                    <p><strong>Mascota de interés:</strong> Luna (Perro)</p>
+                    <span class="plan-price" style="font-size: 13px; margin: 10px 0; color: #555;">Casa con patio / 3 personas</span>
+                    
+                    <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
+                        <button type="button" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(1)">Aprobar</button>
+                        <button type="button" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(1)">Detalles</button>
+                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(1)">Rechazar</button>
+                    </div>
+                </div>
+
+                <!-- Solicitud 2 -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <span class="plan-icon">🐱</span>
+                        <span class="badge-active" style="background-color: #4CAF50;">Aprobada</span>
+                    </div>
+                    <h4>Carlos Andrés Pérez</h4>
+                    <p><strong>Correo:</strong> carlos.perez@ejemplo.com</p>
+                    <p><strong>Tel:</strong> +57 310 987 6543 | Medellín</p>
+                    <p><strong>Mascota de interés:</strong> Gato (Cachorro)</p>
+                    <span class="plan-price" style="font-size: 13px; margin: 10px 0; color: #555;">Apartamento / Sin mascotas previas</span>
+                    
+                    <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
+                        <button type="button" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(2)">Aprobar</button>
+                        <button type="button" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(2)">Detalles</button>
+                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(2)">Rechazar</button>
+                    </div>
+                </div>
+
+                <!-- Solicitud 3 -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <span class="plan-icon">🐾</span>
+                        <span class="badge-active" style="background-color: #e67e22;">En Entrevista</span>
+                    </div>
+                    <h4>Sofía Rincón</h4>
+                    <p><strong>Correo:</strong> sofia.rincon@ejemplo.com</p>
+                    <p><strong>Tel:</strong> +57 320 456 7890 | Cali</p>
+                    <p><strong>Mascota de interés:</strong> Max (Perro Joven)</p>
+                    <span class="plan-price" style="font-size: 13px; margin: 10px 0; color: #555;">Casa / Con perro actual</span>
+                    
+                    <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
+                        <button type="button" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(3)">Aprobar</button>
+                        <button type="button" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(3)">Detalles</button>
+                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(3)">Rechazar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-contact">Asistencia interna de administración | Soporte Técnico Huellas</p>
+        <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Módulo exclusivo de Administración.</p>
+    </footer>
+
+    <!-- Conexión a JS (no borrar y dejar de último) -->
+    <script src="../js/formulario.js"></script>
+    <script src="../js/general.js"></script>
+    <script src="../js/admin-adopciones.js"></script>
+</body>
+</html>
