@@ -10,3 +10,10 @@ if (logoTyC) {
         window.location.href = '/modules/registro.html';
     });
 }
+
+function irAInicio(event) {
+
+    event.preventDefault();
+    
+    window.location.href = "../index.html";
+}
