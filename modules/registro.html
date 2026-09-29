@@ -6,22 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Registro</title>
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+
   <link rel="stylesheet" href="../css/registro.css">
   <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
   <div class="page">
+
     <header>
       <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
+
       <nav>
         <ul>
           <li>
-            <a href="/modules/iniciarsesion.html" class="btn btn-secondary">Iniciar sesión</a>
+            <a href="/modules/iniciarsesion.html" class="btn btn-secondary">
+              Iniciar sesión
+            </a>
           </li>
         </ul>
       </nav>
     </header>
+
 
     <main class="main">
 
@@ -37,6 +46,7 @@
 
         </div>
 
+
         <form class="form" id="registroForm">
 
           <div class="form-row">
@@ -49,7 +59,13 @@
               <div class="input-box">
                 <span class="input-icon">👤</span>
 
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre completo"
+                  required
+                >
               </div>
             </div>
 
@@ -62,11 +78,18 @@
               <div class="input-box">
                 <span class="input-icon">✉</span>
 
-                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  required
+                >
               </div>
             </div>
 
           </div>
+
 
           <div class="form-row">
 
@@ -78,23 +101,40 @@
               <div class="input-box">
                 <span class="input-icon">☎</span>
 
-                <input type="number" id="telefono" name="telefono" placeholder="300 123 4567" required>
+                <input
+                  type="number"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="300 123 4567"
+                  required
+                >
               </div>
             </div>
 
 
             <div class="field">
-              <input type="date" id="nacimiento" name="nacimiento" min="1900-01-01" max="2026-12-31" required>
+
+              <label for="nacimiento">
+                Fecha de nacimiento
+              </label>
 
               <div class="input-box">
                 <span class="input-icon">▣</span>
 
-                <input type="date" id="nacimiento" name="nacimiento" placeholder="Ej. 2000" min="1900" max="2026"
-                  required>
+                <input
+                  type="date"
+                  id="nacimiento"
+                  name="nacimiento"
+                  min="1900-01-01"
+                  max="2026-12-31"
+                  required
+                >
               </div>
+
             </div>
 
           </div>
+
 
           <div class="form-row">
 
@@ -106,7 +146,13 @@
               <div class="input-box">
                 <span class="input-icon">🌐</span>
 
-                <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required>
+                <input
+                  type="text"
+                  id="ciudad"
+                  name="ciudad"
+                  placeholder="Tu ciudad"
+                  required
+                >
               </div>
             </div>
 
@@ -119,26 +165,37 @@
               <div class="input-box">
                 <span class="input-icon">🔒</span>
 
-                <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
-
-                <button type="submit" class="submit-button">Crear cuenta</button>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Crea una contraseña"
+                  required
+                >
               </div>
             </div>
 
           </div>
 
+
           <p class="terms">
             Al registrarte aceptas nuestros
-            <a href="/modules/terminos_condiciones.html">Términos y condiciones</a>
+            <a href="/modules/terminos_condiciones.html">
+              Términos y condiciones
+            </a>
             y
-            <a href="/modules/politica_privacidad.html">Política de privacidad</a>.
+            <a href="/modules/politica_privacidad.html">
+              Política de privacidad
+            </a>.
           </p>
 
-          <button type="submit" class="submit-button" onclick="irAInicio(event)">
+
+          <button type="submit" class="submit-button">
             Crear cuenta
           </button>
 
         </form>
+
 
         <div class="separator">
 
@@ -149,7 +206,6 @@
           <span></span>
 
         </div>
-
 
 
         <div class="footer-group">
@@ -168,6 +224,7 @@
 
     </main>
 
+
     <footer class="footer">
 
       © 2026 PawSpa Voluntarios.
@@ -178,9 +235,12 @@
   </div>
 
 
+  <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="../js/general.js"></script>
   <script src="../js/registro.js"></script>
+
 </body>
 
 </html>
