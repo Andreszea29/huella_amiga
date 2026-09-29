@@ -1,9 +1,3 @@
-/* ==========================================
-   ESTILOS DE ADMINISTRACIÓN - HUELLAS
-   (Sincronizado con la línea gráfica principal)
-   ========================================== */
-
-/* HEADER ESPECÍFICO DE ADMIN */
 header {
     background-color: white;
     padding: 16px 40px;
@@ -28,14 +22,13 @@ header img {
     letter-spacing: 0.5px;
 }
 
-/* CONTENEDOR GENERAL */
 .admin-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 80px 60px 80px;
 }
 
-/* SECCIÓN DE ESTADÍSTICAS RÁPIDAS */
+
 .admin-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,7 +60,6 @@ header img {
     color: #1A1A1A;
 }
 
-/* SECCIÓN PRINCIPAL DE GESTIÓN */
 .admin-section {
     background-color: white;
     border-radius: 16px;
@@ -91,14 +83,12 @@ header img {
     color: #1A1A1A;
 }
 
-/* GRID DE TARJETAS DE SOLICITUDES / VOLUNTARIOS */
 .voluntarios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 20px;
 }
 
-/* TARJETA INDIVIDUAL (PLAN-CARD) */
 .plan-card {
     background-color: #FAFAFA;
     border-radius: 16px;
@@ -131,7 +121,6 @@ header img {
     font-size: 20px;
 }
 
-/* BADGES DE ESTADO */
 .badge-active {
     font-size: 10px;
     font-weight: 700;
@@ -162,7 +151,6 @@ header img {
     line-height: 1.4;
 }
 
-/* ACCIONES DE LAS TARJETAS (BOTONES INTERNOS) */
 .admin-card-actions {
     display: flex;
     gap: 8px;
@@ -194,7 +182,6 @@ header img {
     color: #2FB839;
 }
 
-/* BOTÓN PRINCIPAL Y FOOTER */
 .btn-submit {
     background-color: #46E551;
     color: white;
@@ -232,7 +219,6 @@ footer {
     color: #B0B0B0;
 }
 
-/* RESPONSIVE PARA EL PANEL */
 @media (max-width: 850px) {
     .admin-container {
         padding: 20px 20px;
