@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawSpa - Panel de Control de Voluntarios</title>
+    <link rel="stylesheet" href="../css/spa.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
+    </header>
+
+    <main class="container">
+        <!-- Banner del Panel -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">📊 PANEL ADMINISTRATIVO</span>
+                <h1>Registro de Solicitudes de Voluntarios</h1>
+                <p class="hero-description">
+                    Consulta y gestiona las solicitudes recibidas a través del formulario de inscripción de PawSpa.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tabla de Datos -->
+        <section class="admin-section" style="margin-top: 30px;">
+            <div class="form-header">
+                <h2>Solicitudes Recibidas</h2>
+                <p>Lista general de candidatos con la información ingresada en la base de datos.</p>
+            </div>
+
+            <div class="table-container" style="overflow-x: auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: inherit;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #eee; background-color: #f8f9fa;">
+                            <th style="padding: 12px;">ID</th>
+                            <th style="padding: 12px;">Nombre Completo</th>
+                            <th style="padding: 12px;">Género</th>
+                            <th style="padding: 12px;">Edad</th>
+                            <th style="padding: 12px;">Experiencia</th>
+                            <th style="padding: 12px;">Horarios Disponibles</th>
+                            <th style="padding: 12px;">Fecha de Registro</th>
+                            <th style="padding: 12px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de Fila 1 (Aquí renderizarás los datos desde tu Backend/BD) -->
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px;">#1</td>
+                            <td style="padding: 12px;"><strong>Ana María Martínez</strong></td>
+                            <td style="padding: 12px;">Femenino</td>
+                            <td style="padding: 12px;">24 años</td>
+                            <td style="padding: 12px;">Tengo mascotas propias</td>
+                            <td style="padding: 12px;">
+                                <span style="background: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Mañana (L-V)</span>
+                                <span style="background: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Sábado completo</span>
+                            </td>
+                            <td style="padding: 12px;">2026-09-29</td>
+                            <td style="padding: 12px;">
+                                <button style="background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Aprobar</button>
+                                <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Eliminar</button>
+                            </td>
+                        </tr>
+
+                        <!-- Ejemplo de Fila 2 -->
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px;">#2</td>
+                            <td style="padding: 12px;"><strong>Carlos Eduardo Gómez</strong></td>
+                            <td style="padding: 12px;">Masculino</td>
+                            <td style="padding: 12px;">29 años</td>
+                            <td style="padding: 12px;">He sido voluntario antes</td>
+                            <td style="padding: 12px;">
+                                <span style="background: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Tarde (L-V)</span>
+                                <span style="background: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Domingo completo</span>
+                            </td>
+                            <td style="padding: 12px;">2026-09-29</td>
+                            <td style="padding: 12px;">
+                                <button style="background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Aprobar</button>
+                                <button style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+ <div style="text-align: center; margin: 20px 0;">
+    <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-family: sans-serif;">
+        ⬅️ Volver
+    </a>
+</div>
+    <footer>
+        <p class="footer-copy">© 2026 PawSpa Voluntarios. Creado con amor para los animales sin hogar.</p>
+    </footer>
+
+    <!-- Conexión a JS NO BORRAR -->
+    <script src="../js/index.js"></script>
+    <script src="../js/general.js"></script>
+</body>
+</html>

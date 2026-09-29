@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada de Vacunación - Registro de Citas</title>
+    <link rel="stylesheet" href="../css/vacunacion.css">
+</head>
+<body>
+    <header>
+        <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
+        <nav>
+            <ul></ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Banner del Panel -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">📊 PANEL ADMINISTRATIVO</span>
+                <h1>Registro de Citas - Vacunación 💉</h1>
+                <p class="hero-description">
+                    Consulta, administra y confirma las solicitudes de vacunación registradas por los dueños de las mascotas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tabla de Registros -->
+        <section class="admin-section" style="margin-top: 30px;">
+            <div class="form-header">
+                <h2>Mascotas Inscritas</h2>
+                <p>Lista general de citas agendadas y almacenadas en la base de datos.</p>
+            </div>
+
+            <div class="table-container" style="overflow-x: auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: inherit; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #eee; background-color: #f8f9fa;">
+                            <th style="padding: 12px;">ID</th>
+                            <th style="padding: 12px;">Dueño</th>
+                            <th style="padding: 12px;">Contacto</th>
+                            <th style="padding: 12px;">Mascota</th>
+                            <th style="padding: 12px;">Detalles (Raza / Edad / Peso)</th>
+                            <th style="padding: 12px;">Vacunas Solicitadas</th>
+                            <th style="padding: 12px;">Fecha y Horario</th>
+                            <th style="padding: 12px;">Estado</th>
+                            <th style="padding: 12px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo de Fila 1 -->
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px;">#001</td>
+                            <td style="padding: 12px;"><strong>María Pérez</strong></td>
+                            <td style="padding: 12px;">
+                                📞 +51 999 888 777<br>
+                                ✉️ maria@email.com
+                            </td>
+                            <td style="padding: 12px;">
+                                <strong>Luna</strong> <br>
+                                <small style="color: #666;">(Perro)</small>
+                            </td>
+                            <td style="padding: 12px;">
+                                Golden Retriever<br>
+                                <small style="color: #666;">2 años | 12 kg</small>
+                            </td>
+                            <td style="padding: 12px;">
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Rabia</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Parvovirus</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Desparasitación</span>
+                            </td>
+                            <td style="padding: 12px;">
+                                📅 2026-10-15<br>
+                                ⏰ Mañana (8:00 AM - 12:00 PM)
+                            </td>
+                            <td style="padding: 12px;">
+                                <span style="background: #fff3cd; color: #856404; padding: 4px 8px; border-radius: 12px; font-weight: bold; font-size: 12px;">Pendiente</span>
+                            </td>
+                            <td style="padding: 12px;">
+                                <button style="background: #28a745; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; margin-bottom: 4px;">Confirmar</button>
+                                <button style="background: #dc3545; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer;">Cancelar</button>
+                            </td>
+                        </tr>
+
+                        <!-- Ejemplo de Fila 2 -->
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px;">#002</td>
+                            <td style="padding: 12px;"><strong>Carlos Mendoza</strong></td>
+                            <td style="padding: 12px;">
+                                📞 +51 987 654 321<br>
+                                ✉️ carlos.m@email.com
+                            </td>
+                            <td style="padding: 12px;">
+                                <strong>Michi</strong> <br>
+                                <small style="color: #666;">(Gato)</small>
+                            </td>
+                            <td style="padding: 12px;">
+                                Mestizo<br>
+                                <small style="color: #666;">1 año | 4 kg</small>
+                            </td>
+                            <td style="padding: 12px;">
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Triple Felina</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-size: 11px;">Rabia</span>
+                            </td>
+                            <td style="padding: 12px;">
+                                📅 2026-10-16<br>
+                                ⏰ Tarde (2:00 PM - 6:00 PM)
+                            </td>
+                            <td style="padding: 12px;">
+                                <span style="background: #d4edda; color: #155724; padding: 4px 8px; border-radius: 12px; font-weight: bold; font-size: 12px;">Confirmado</span>
+                            </td>
+                            <td style="padding: 12px;">
+                                <button style="background: #007bff; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; margin-bottom: 4px;">Editar</button>
+                                <button style="background: #dc3545; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer;">Cancelar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+ <div style="text-align: center; margin: 20px 0;">
+    <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-family: sans-serif;">
+        ⬅️ Volver
+    </a>
+ </div>
+    <footer>
+        <p class="footer-contact">Asistencia o dudas adicionales: soporte@huellas.org | Teléfono de contacto: +51 999 888 777</p>
+        <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas sin hogar.</p>
+    </footer>
+
+    <!-- Conexión a JS NO BORRAR -->
+    <script src="../js/index.js"></script>
+    <script src="../js/general.js"></script>
+</body>
+</html>
