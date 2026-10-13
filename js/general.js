@@ -17,3 +17,6 @@ function irAInicio(event) {
     
     window.location.href = "../index.html";
 }
+
+
+

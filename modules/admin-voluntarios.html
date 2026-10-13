@@ -15,7 +15,7 @@
     </header>
 
     <main class="admin-container">
-        <!-- Sección de Estadísticas Rápidas -->
+      
         <section class="admin-stats">
             <div class="stat-card">
                 <h3>Total Voluntarios</h3>
@@ -31,16 +31,15 @@
             </div>
         </section>
 
-        <!-- Listado de Voluntarios con Botones de Acción -->
         <section class="admin-section">
             <div class="section-header">
                 <h2>Gestión de Voluntarios Capacitados</h2>
-                <!-- Botón transformado en enlace que redirige a la página de voluntarios -->
+              
                 <a href="voluntarios.html" class="btn-submit" style="text-decoration: none; display: inline-block; text-align: center; padding: 12px 24px; font-size: 14px;">+ Añadir Voluntario</a>
             </div>
 
             <div class="voluntarios-grid">
-                <!-- Voluntario 1 -->
+           
                 <div class="plan-card">
                     <div class="plan-header">
                         <img src="https://i.pravatar.cc/60?img=11" alt="Voluntario" class="admin-avatar">
@@ -52,13 +51,12 @@
                     <span class="plan-price" style="font-size: 14px; margin: 10px 0;">42 Paseos completados</span>
                     
                     <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
-                        <button type="button" class="day-btn active" style="flex: 1;" onclick="verDetalles(1)">Detalles</button>
-                        <button type="button" class="day-btn" style="flex: 1;" onclick="editarVoluntario(1)">Editar</button>
-                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(1)">Eliminar</button>
+                        <button type="submit" class="day-btn active" style="flex: 1;" onclick="verDetalles(1)">Detalles</button>
+                        <button type="submit" class="day-btn" style="flex: 1;" onclick="editarVoluntario(1)">Editar</button>
+                        <button type="submit" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(1)">Eliminar</button>
                     </div>
                 </div>
 
-                <!-- Voluntario 2 -->
                 <div class="plan-card selected">
                     <div class="plan-header">
                         <img src="https://i.pravatar.cc/60?img=12" alt="Voluntario" class="admin-avatar">
@@ -70,13 +68,12 @@
                     <span class="plan-price" style="font-size: 14px; margin: 10px 0;">85 Paseos completados</span>
                     
                     <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
-                        <button type="button" class="day-btn active" style="flex: 1;" onclick="verDetalles(2)">Detalles</button>
-                        <button type="button" class="day-btn" style="flex: 1;" onclick="editarVoluntario(2)">Editar</button>
-                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(2)">Eliminar</button>
+                        <button type="submit" class="day-btn active" style="flex: 1;" onclick="verDetalles(2)">Detalles</button>
+                        <button type="submit" class="day-btn" style="flex: 1;" onclick="editarVoluntario(2)">Editar</button>
+                        <button type="submit" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(2)">Eliminar</button>
                     </div>
                 </div>
 
-                <!-- Voluntario 3 -->
                 <div class="plan-card">
                     <div class="plan-header">
                         <img src="https://i.pravatar.cc/60?img=13" alt="Voluntario" class="admin-avatar">
@@ -88,9 +85,9 @@
                     <span class="plan-price" style="font-size: 14px; margin: 10px 0;">19 Paseos completados</span>
                     
                     <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
-                        <button type="button" class="day-btn active" style="flex: 1;" onclick="verDetalles(3)">Detalles</button>
-                        <button type="button" class="day-btn" style="flex: 1;" onclick="editarVoluntario(3)">Editar</button>
-                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(3)">Eliminar</button>
+                        <button type="submit" class="day-btn active" style="flex: 1;" onclick="verDetalles(3)">Detalles</button>
+                        <button type="submit" class="day-btn" style="flex: 1;" onclick="editarVoluntario(3)">Editar</button>
+                        <button type="submit" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="eliminarVoluntario(3)">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -101,7 +98,6 @@
         <p class="footer-copy">© 2026 PawSpa Paseadores. Módulo exclusivo de Administración.</p>
     </footer>
 
-    <!-- Conexión a JS (no borrar y dejar de último) -->
     <script src="../js/general.js"></script>
     <script src="../js/admin.js"></script>
 </body>

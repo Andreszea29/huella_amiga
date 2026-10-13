@@ -15,7 +15,7 @@
     </header>
 
     <main class="admin-container">
-        <!-- Sección de Estadísticas Rápidas -->
+       
         <section class="admin-stats">
             <div class="stat-card">
                 <h3>Solicitudes Totales</h3>
@@ -31,16 +31,15 @@
             </div>
         </section>
 
-        <!-- Listado de Solicitudes con Botones de Acción -->
         <section class="admin-section">
             <div class="section-header">
                 <h2>Gestión de Solicitudes de Adopción</h2>
-                <!-- Botón que redirige de vuelta al formulario de adopción -->
+           
                 <a href="formulario-adopcion.html" class="btn-submit" style="text-decoration: none; display: inline-block; text-align: center; padding: 12px 24px; font-size: 14px;">+ Nueva Solicitud</a>
             </div>
 
             <div class="voluntarios-grid">
-                <!-- Solicitud 1 -->
+             
                 <div class="plan-card selected">
                     <div class="plan-header">
                         <span class="plan-icon">🐾</span>
@@ -53,13 +52,12 @@
                     <span class="plan-price" style="font-size: 13px; margin: 10px 0; color: #555;">Casa con patio / 3 personas</span>
                     
                     <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
-                        <button type="button" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(1)">Aprobar</button>
-                        <button type="button" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(1)">Detalles</button>
-                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(1)">Rechazar</button>
+                        <button type="submit" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(1)">Aprobar</button>
+                        <button type="submit" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(1)">Detalles</button>
+                        <button type="submit" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(1)">Rechazar</button>
                     </div>
                 </div>
 
-                <!-- Solicitud 2 -->
                 <div class="plan-card">
                     <div class="plan-header">
                         <span class="plan-icon">🐱</span>
@@ -72,13 +70,12 @@
                     <span class="plan-price" style="font-size: 13px; margin: 10px 0; color: #555;">Apartamento / Sin mascotas previas</span>
                     
                     <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
-                        <button type="button" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(2)">Aprobar</button>
-                        <button type="button" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(2)">Detalles</button>
-                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(2)">Rechazar</button>
+                        <button type="submit" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(2)">Aprobar</button>
+                        <button type="submit" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(2)">Detalles</button>
+                        <button type="submit" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(2)">Rechazar</button>
                     </div>
                 </div>
 
-                <!-- Solicitud 3 -->
                 <div class="plan-card">
                     <div class="plan-header">
                         <span class="plan-icon">🐾</span>
@@ -91,9 +88,9 @@
                     <span class="plan-price" style="font-size: 13px; margin: 10px 0; color: #555;">Casa / Con perro actual</span>
                     
                     <div class="admin-card-actions" style="display: flex; gap: 8px; margin-top: 15px;">
-                        <button type="button" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(3)">Aprobar</button>
-                        <button type="button" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(3)">Detalles</button>
-                        <button type="button" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(3)">Rechazar</button>
+                        <button type="submit" class="day-btn active" style="flex: 1;" onclick="aprobarSolicitud(3)">Aprobar</button>
+                        <button type="submit" class="day-btn" style="flex: 1;" onclick="verDetallesSolicitud(3)">Detalles</button>
+                        <button type="submit" class="day-btn" style="flex: 1; color: #d9534f; border-color: #f5c6cb;" onclick="rechazarSolicitud(3)">Rechazar</button>
                     </div>
                 </div>
             </div>
@@ -105,7 +102,6 @@
         <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Módulo exclusivo de Administración.</p>
     </footer>
 
-    <!-- Conexión a JS (no borrar y dejar de último) -->
     <script src="../js/formulario.js"></script>
     <script src="../js/general.js"></script>
     <script src="../js/admin-adopciones.js"></script>
