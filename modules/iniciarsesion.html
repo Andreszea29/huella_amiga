@@ -4,43 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Iniciar sesión</title>
 
     <link rel="stylesheet" href="../css/iniciarsesion.css">
     <link rel="stylesheet" href="../css/index.css">
-
 </head>
 
 <body>
+    <form action="" method="POST">
     <div class="page">
+
         <header>
-            <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
+            <img
+                src="../imagenes/logo.png"
+                alt="Logo de la página"
+                id="logo">
 
             <nav>
                 <ul>
                     <li>
-                        <a href="/modules/registro.html" class="btn btn-primary">Registrarse</a>
+                        <a href="registro.html" class="btn btn-primary">
+                            Registrarse
+                        </a>
                     </li>
                 </ul>
             </nav>
         </header>
-
-
+    
         <main class="main">
 
             <section class="signup-card">
 
                 <div class="brand-header">
-
                     <h1>Iniciar sesión</h1>
-
-                    <p>
-                        Bienvenido de nuevo
-                    </p>
-
+                    <p>Bienvenido de nuevo</p>
                 </div>
 
-                <form class="form" id="loginForm">
+                <!-- Formulario compatible con PHP -->
+                <form
+                    class="form"
+                    id="loginForm"
+                    action="../php/iniciar_sesion.php"
+                    method="POST">
+
                     <div class="field">
 
                         <label for="email">
@@ -49,15 +56,19 @@
 
                         <div class="input-box">
 
-                            <span class="input-icon">
-                                ✉
-                            </span>
+                            <span class="input-icon">✉</span>
 
-                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="tu@email.com"
+                                autocomplete="email"
+                                required>
 
                         </div>
-
                     </div>
+
                     <div class="field">
 
                         <label for="password">
@@ -66,45 +77,56 @@
 
                         <div class="input-box">
 
-                            <span class="input-icon">
-                                🔒
-                            </span>
+                            <span class="input-icon">🔒</span>
 
-                            <input type="password" id="password" name="password" placeholder="Tu contraseña" required>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Tu contraseña"
+                                autocomplete="current-password"
+                                required>
 
-                            <button type="button" class="eye-button" onclick="mostrarPassword()">
+                            <button
+                                type="button"
+                                class="eye-button"
+                                onclick="mostrarPassword()"
+                                aria-label="Mostrar u ocultar contraseña">
                                 👁
                             </button>
 
                         </div>
-
                     </div>
+
                     <p class="terms">
                         Al iniciar sesión aceptas nuestros
-                        <a href="#">
+
+                        <a href="terminos.html">
                             Términos y condiciones
                         </a>
+
                         y
-                        <a href="#">
+
+                        <a href="politica_privacidad.html">
                             Política de privacidad
                         </a>.
                     </p>
-                    <button type="submit" class="submit-button" id="btnGuardar">
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                        id="btnGuardar">
                         Iniciar sesión
                     </button>
 
                 </form>
+
                 <div class="separator">
-
                     <span></span>
-
-                    <p>
-                        O CONTINÚA CON
-                    </p>
-
+                    <p>O CONTINÚA CON</p>
                     <span></span>
-
                 </div>
+
                 <div class="social-group">
 
                     <button type="button" class="social-button">
@@ -118,11 +140,10 @@
                     </button>
 
                 </div>
+
                 <div class="footer-group">
 
-                    <span>
-                        ¿No tienes una cuenta?
-                    </span>
+                    <span>¿No tienes una cuenta?</span>
 
                     <a href="registro.html">
                         Regístrate
@@ -131,18 +152,19 @@
                 </div>
 
             </section>
-
         </main>
 
         <footer class="footer">
-
             © 2026 PawSpa Voluntarios.
             Creado con amor para los animales sin hogar.
         </footer>
+
     </div>
+
+  </form>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/general.js"></script>
     <script src="../js/iniciarsesion.js"></script>
-</body>
 
+</body>
 </html>
