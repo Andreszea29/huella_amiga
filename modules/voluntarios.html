@@ -47,26 +47,26 @@
                     <p>Registra los datos de tu mascota y la dirección para que un paseador voluntario capacitado pase a recogerle de manera segura.</p>
                 </div>
 
-                <form class="form-card">
+                <form action="" method="post">
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre-dueno">Nombre del dueño</label>
-                            <input type="text" id="nombre-dueno" placeholder="Ej. Carlos Mendoza">
+                            <input type="text" id="nombre-dueno" name="nombre-dueno" placeholder="Ej. Carlos Mendoza">
                         </div>
                         <div class="field">
                             <label for="telefono">Teléfono de contacto</label>
-                            <input type="tel" id="telefono" placeholder="Ej. +52 55 1234 5678">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. +52 55 1234 5678">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre-mascota">Nombre de la mascota</label>
-                            <input type="text" id="nombre-mascota" placeholder="Ej. Max">
+                            <input type="text" id="nombre-mascota" name="nombre-mascota"  placeholder="Ej. Max">
                         </div>
                         <div class="field">
                             <label for="raza-mascota">Raza de la mascota</label>
-                            <input type="text" id="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
+                            <input type="text" id="raza-mascota" name="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@
 
                     <div class="field">
                         <label for="direccion">Dirección de recogida</label>
-                        <input type="text" id="direccion" placeholder="Calle Olivo #124, Col. Del Valle, Benito Juárez">
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle Olivo #124, Col. Del Valle, Benito Juárez">
                     </div>
 
                     <div class="field">
@@ -132,7 +132,6 @@
                             </label>
                         </div>
                     </div>
-                </form>
             </section>
 
             <!-- Sidebar / Tarifas -->
@@ -207,6 +206,7 @@
             <p class="disclaimer">Al enviar tu solicitud, buscaremos un paseador compatible en tu zona. El servicio está sujeto a disponibilidad geográfica y de cupos de voluntarios PawSpa.</p>
         </div>
     </main>
+    </form>
 
     <footer>
         <p class="footer-copy">© 2026 PawSpa Paseadores. Creado con amor para los animales de casa y sin hogar.</p>
