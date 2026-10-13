@@ -1,5 +1,3 @@
-
-/* Contenedor principal de la vista de administración */
 .admin-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -9,7 +7,6 @@
     gap: 30px;
 }
 
-/* Encabezado especial con insignia de control */
 header {
     display: flex;
     justify-content: space-between;
@@ -28,7 +25,6 @@ header {
     font-weight: 700;
 }
 
-/* Tarjetas de Estadísticas Rápidas (KPIs) */
 .admin-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -57,7 +53,6 @@ header {
     color: #1A1A1A;
 }
 
-/* Sección de Listados */
 .admin-section {
     display: flex;
     flex-direction: column;
@@ -76,14 +71,12 @@ header {
     color: #1A1A1A;
 }
 
-/* Cuadrícula para mostrar los perfiles de voluntarios */
 .voluntarios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
 }
 
-/* Personalización del avatar dentro de las tarjetas existentes */
 .admin-avatar {
     width: 48px;
     height: 48px;
@@ -92,7 +85,6 @@ header {
     border: 2px solid #EFEFEF;
 }
 
-/* Responsividad para pantallas pequeñas */
 @media (max-width: 850px) {
     .admin-stats {
         grid-template-columns: 1fr;
