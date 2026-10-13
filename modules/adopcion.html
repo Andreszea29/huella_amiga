@@ -35,16 +35,23 @@
             <div class="search-container">
                 <div class="search-input-wrapper">
                     <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Buscar tu nuevo mejor amigo (raza, edad, temperamento...)">
-                    <button class="btn-filter-icon">⚡</button>
+
+                    <input
+                        type="text"
+                        id="buscar_mascota"
+                        name="buscar_mascota"
+                        placeholder="Buscar tu nuevo mejor amigo (raza, edad, temperamento...)"
+                    >
+
+                    <button type="button" class="btn-filter-icon">⚡</button>
                 </div>
 
                 <div class="filter-tags">
-                    <button class="tag active">Todos</button>
-                    <button class="tag">🐕 Perros</button>
-                    <button class="tag">🐱 Gatos</button>
-                    <button class="tag">🦜 Aves</button>
-                    <button class="tag">🐹 Hámsters</button>
+                    <button type="button" class="tag active">Todos</button>
+                    <button type="button" class="tag">🐕 Perros</button>
+                    <button type="button" class="tag">🐱 Gatos</button>
+                    <button type="button" class="tag">🦜 Aves</button>
+                    <button type="button" class="tag">🐹 Hámsters</button>
                 </div>
             </div>
         </section>
@@ -52,7 +59,7 @@
         <section class="pets-grid">
             <div class="pet-card">
                 <div class="card-image">
-                    <button class="fav-btn active">❤️</button>
+                    <button type="button" class="fav-btn active">❤️</button>
                     <img src="/imagenes/Luna.png" alt="Luna - Golden Retriever">
                 </div>
                 <div class="card-info">
@@ -69,7 +76,7 @@
 
             <div class="pet-card">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
+                    <button type="button" class="fav-btn">🤍</button>
                     <img src="/imagenes/simba.png" alt="Simba - Gato Siamés">
                 </div>
                 <div class="card-info">
@@ -86,7 +93,7 @@
 
             <div class="pet-card">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
+                    <button type="button" class="fav-btn">🤍</button>
                     <img src="/imagenes/pico.png" alt="Pico - Canario Amarillo">
                 </div>
                 <div class="card-info">
@@ -103,7 +110,7 @@
 
             <div class="pet-card">
                 <div class="card-image">
-                    <button class="fav-btn active">❤️</button>
+                    <button type="button" class="fav-btn active">❤️</button>
                     <img src="/imagenes/copito.png" alt="Copito - Hámster Ruso">
                 </div>
                 <div class="card-info">
@@ -120,7 +127,7 @@
 
             <div class="pet-card">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
+                    <button type="button" class="fav-btn">🤍</button>
                     <img src="/imagenes/milo.png" alt="Milo - Border Collie">
                 </div>
                 <div class="card-info">
@@ -137,7 +144,7 @@
 
             <div class="pet-card">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
+                    <button type="button" class="fav-btn">🤍</button>
                     <img src="/imagenes/kiwi.png" alt="Kiwi - Gato Angora">
                 </div>
                 <div class="card-info">
@@ -165,8 +172,7 @@
         <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas sin hogar.</p>
     </footer>
 
-    <!-- conexion a js NO BORRAR y dejar siempre de último -->
     <script src="../js/formulario.js"></script>
-    <script src ="../js/general.js"></script>
+    <script src="../js/general.js"></script>
 </body>
 </html>
