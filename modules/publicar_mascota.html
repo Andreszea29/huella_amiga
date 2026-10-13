@@ -20,7 +20,7 @@
             </ul>
         </nav>
     </header>
-
+ <form action="" method="POST">
     <main class="container">
         <section class="hero">
             <div class="hero-content">
@@ -60,11 +60,11 @@
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre-mascota">Nombre de la mascota</label>
-                            <input type="text" id="nombre-mascota" placeholder="Ej. Luna">
+                            <input type="text" id="nombre-mascota" name="nombre-mascota" placeholder="Ej. Luna">
                         </div>
                         <div class="field">
                             <label for="raza-mascota">Raza</label>
-                            <input type="text" id="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
+                            <input type="text" id="raza-mascota" name="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
                         </div>
                     </div>
 
@@ -82,11 +82,11 @@
                     <div class="form-row">
                         <div class="field">
                             <label for="edad-mascota">Edad</label>
-                            <input type="text" id="edad-mascota" placeholder="Ej. 1.4 años">
+                            <input type="text" id="edad-mascota" name="edad-mascota" placeholder="Ej. 1.4 años">
                         </div>
                         <div class="field">
                             <label for="peso-mascota">Peso aproximado</label>
-                            <input type="text" id="peso-mascota" placeholder="Ej. 17 kg">
+                            <input type="text" id="peso-mascota" name="peso-mascota" placeholder="Ej. 17 kg">
                         </div>
                     </div>
 
@@ -164,22 +164,22 @@
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre-contacto">Nombre completo</label>
-                            <input type="text" id="nombre-contacto" placeholder="Ej. Carlos Mendoza">
+                            <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="Ej. Carlos Mendoza">
                         </div>
                         <div class="field">
                             <label for="correo-contacto">Correo electrónico</label>
-                            <input type="email" id="correo-contacto" placeholder="Ej. carlos@correo.com">
+                            <input type="email" id="correo-contacto" name="correo-contacto" placeholder="Ej. carlos@correo.com">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="field">
                             <label for="telefono-contacto">Teléfono de contacto</label>
-                            <input type="tel" id="telefono-contacto" placeholder="Ej. +51 999 888 777">
+                            <input type="tel" id="telefono-contacto" name="telefono-contacto" placeholder="Ej. +51 999 888 777">
                         </div>
                         <div class="field">
                             <label for="ciudad-contacto">Ciudad</label>
-                            <input type="text" id="ciudad-contacto" placeholder="Ej. Lima, Perú">
+                            <input type="text" id="ciudad-contacto" name="ciudad-contacto" placeholder="Ej. Lima, Perú">
                         </div>
                     </div>
 
@@ -255,12 +255,12 @@
             <p class="disclaimer">Al publicar, aceptas los términos de servicio. La publicación será revisada antes de aparecer en el catálogo.</p>
         </div>
     </main>
-
+  </form>
     <footer>
         <p class="footer-contact">Asistencia o dudas adicionales: soporte@huellas.org | Teléfono de contacto: +51 999 888 777</p>
         <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas del mundo.</p>
     </footer>
-
+  
     <!-- conexion a js NO BORRAR y dejar siempre de último -->
     <script src="../js/formulario.js"></script>
     <script src ="../js/general.js"></script>
