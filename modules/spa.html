@@ -11,7 +11,7 @@
         <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
         </nav>
     </header>
-
+    <form actiom="" method="post">
     <main class="container">
         <!-- Hero Section -->
         <section class="hero">
@@ -50,10 +50,10 @@
                     <p>Por favor, completa tus datos para que podamos conocerte mejor y encontrar el rol perfecto para ti en nuestro spa de bienestar.</p>
                 </div>
 
-                <form class="form-card">
+                
                     <div class="field">
                         <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" placeholder="Ej. Ana María Martínez">
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana María Martínez">
                     </div>
 
                     <div class="field">
@@ -76,7 +76,7 @@
 
                     <div class="field">
                         <label for="edad">Edad</label>
-                        <input type="text" id="edad" placeholder="Ej. 24">
+                        <input type="text" id="edad" name="edad" placeholder="Ej. 24">
                         <span class="field-hint">Mínimo 16 años</span>
                     </div>
 
@@ -109,7 +109,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
             </section>
 
             <!-- Sidebar Lateral -->
@@ -166,11 +165,13 @@
         </div>
 
         <!-- Botón Enviar -->
+
         <div class="submit-wrapper">
             <button type="submit" class="btn-submit" onclick="irAInicio(event)">Enviar Solicitud ➔</button>
             <p class="disclaimer">Al enviar tu solicitud, aceptas que revisemos tus datos únicamente para fines de selección del programa voluntario.</p>
         </div>
     </main>
+    </form>
 
     <footer>
         <p class="footer-copy">© 2026 PawSpa Voluntarios. Creado con amor para los animales sin hogar.</p>
