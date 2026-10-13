@@ -1,1 +1,3 @@
-<?php ?>
+<?php 
+require("conexion.php");
+?>
