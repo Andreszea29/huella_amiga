@@ -491,3 +491,8 @@ footer {
         padding: 0 20px;
     } 
 }
+/* Selección de plan (js/voluntarios.js) */
+.plan-card { cursor: pointer; }
+.plan-card .badge-selected { display: none; }
+.plan-card.selected .badge-selected { display: inline-block; }
+.plan-card.selected .btn-select { display: none; }

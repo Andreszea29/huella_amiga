@@ -2,33 +2,31 @@
 require("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $nombre_mascota = trim($_POST['nombre-mascota'] ?? '');
-    $raza_mascota   = trim($_POST['raza-mascota'] ?? '');
-    $tipo_mascota   = $_POST['tipo_mascota'] ?? '';
-    $edad_mascota   = trim($_POST['edad-mascota'] ?? '');
-    $peso_mascota   = trim($_POST['peso-mascota'] ?? '');
-    $sexo           = $_POST['sexo'] ?? '';
-    $tamano         = $_POST['tamano'] ?? '';
-    $esterilizado   = $_POST['esterilizado'] ?? '';
-    $vacunas        = $_POST['vacunas'] ?? '';
-    $temperamento   = isset($_POST['temperamento']) ? implode(", ", $_POST['temperamento']) : '';
-    $descripcion    = trim($_POST['descripcion-mascota'] ?? '');
-    $nombre_contacto   = trim($_POST['nombre-contacto'] ?? '');
-    $correo_contacto   = trim($_POST['correo-contacto'] ?? '');
-    $telefono_contacto = trim($_POST['telefono-contacto'] ?? '');
-    $ciudad_contacto   = trim($_POST['ciudad-contacto'] ?? '');
-    $motivo            = $_POST['motivo-publicacion'] ?? '';
-
-    $confirmaciones = isset($_POST['confirmaciones']) ? implode(", ", $_POST['confirmaciones']) : '';
+    $nombre_mascota = limpiar($conn, 'nombre-mascota');
+    $raza_mascota = limpiar($conn, 'raza-mascota');
+    $tipo_mascota = limpiar($conn, 'tipo_mascota');
+    $edad_mascota = limpiar($conn, 'edad-mascota');
+    $peso_mascota = limpiar($conn, 'peso-mascota');
+    $sexo = limpiar($conn, 'sexo');
+    $tamano = limpiar($conn, 'tamano');
+    $esterilizado = limpiar($conn, 'esterilizado');
+    $vacunas = limpiar($conn, 'vacunas');
+    $temperamento = unir($conn, 'temperamento');
+    $descripcion = limpiar($conn, 'descripcion-mascota');
+    $nombre_contacto = limpiar($conn, 'nombre-contacto');
+    $correo_contacto = limpiar($conn, 'correo-contacto');
+    $telefono_contacto = limpiar($conn, 'telefono-contacto');
+    $ciudad_contacto = limpiar($conn, 'ciudad-contacto');
+    $motivo = limpiar($conn, 'motivo-publicacion');
+    $confirmaciones = unir($conn, 'confirmaciones');
 
     $sql = "INSERT INTO mascotas (nombre_mascota, raza_mascota, tipo_mascota, edad_mascota, peso_mascota, sexo, tamano, esterilizado, vacunas, temperamento, descripcion, nombre_contacto, correo_contacto, telefono_contacto, ciudad_contacto, motivo, confirmaciones)
-        VALUES ('$nombre_mascota', '$raza_mascota', '$tipo_mascota', '$edad_mascota', '$peso_mascota', '$sexo', '$tamano', '$esterilizado', '$vacunas', '$temperamento', '$descripcion', '$nombre_contacto', '$correo_contacto', '$telefono_contacto', '$ciudad_contacto', '$motivo', '$confirmaciones')";
+            VALUES ('$nombre_mascota', '$raza_mascota', '$tipo_mascota', '$edad_mascota', '$peso_mascota', '$sexo', '$tamano', '$esterilizado', '$vacunas', '$temperamento', '$descripcion', '$nombre_contacto', '$correo_contacto', '$telefono_contacto', '$ciudad_contacto', '$motivo', '$confirmaciones')";
 
     if ($conn->query($sql) === TRUE) {
-    echo "registro guardado correctamente.";
+        terminar("Mascota enviada. La revisaremos en 48 horas.", "../modules/adopcion.html");
     } else {
-    echo "Error" . $sql . "<br>" . $conn->error;
+        echo "Error: " . $conn->error;
     }
 }
 ?>

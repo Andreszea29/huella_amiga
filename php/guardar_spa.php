@@ -2,20 +2,19 @@
 require("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre      = trim($_POST['nombre'] ?? '');
-    $genero      = $_POST['genero'] ?? '';
-    $edad        = trim($_POST['edad'] ?? '');
-    $experiencia = $_POST['experiencia'] ?? '';
-
-    $horarios    = isset($_POST['horarios']) ? implode(", ", $_POST['horarios']) : '';
+    $nombre = limpiar($conn, 'nombre');
+    $genero = limpiar($conn, 'genero');
+    $edad = limpiar($conn, 'edad');
+    $experiencia = limpiar($conn, 'experiencia');
+    $horarios = unir($conn, 'horarios');
 
     $sql = "INSERT INTO voluntarios_spa (nombre, genero, edad, experiencia, horarios)
-        VALUES ('$nombre', '$genero', '$edad', '$experiencia', '$horarios')";
+            VALUES ('$nombre', '$genero', '$edad', '$experiencia', '$horarios')";
 
     if ($conn->query($sql) === TRUE) {
-    echo "registro guardado correctamente.";
+        terminar("Gracias por postularte. Revisaremos tu solicitud pronto.", "../modules/index.html");
     } else {
-    echo "Error" . $sql . "<br>" . $conn->error;
+        echo "Error: " . $conn->error;
     }
 }
 ?>

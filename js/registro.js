@@ -90,19 +90,8 @@ function validarDatos(event) {
 
 
   
-    Swal.fire({
-        icon: "success",
-        title: "¡Registro completado!",
-        text: "Tu información se ha guardado correctamente.",
-        confirmButtonText: "Continuar"
-    }).then((result) => {
-
-        if (result.isConfirmed) {
-            window.location.href = "../index.html";
-        }
-
-    });
-
+    // Todo correcto: se envía el formulario a PHP para guardarlo en la base de datos
+    event.target.submit();
 }
 
 

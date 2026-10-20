@@ -23,7 +23,7 @@
       <nav>
         <ul>
           <li>
-            <a href="/modules/iniciarsesion.html" class="btn btn-secondary">
+            <a href="iniciarsesion.html" class="btn btn-secondary">
               Iniciar sesión
             </a>
           </li>
@@ -31,7 +31,6 @@
       </nav>
     </header>
 
-    <form action="" method="post">
     <main class="main">
 
       <section class="signup-card">
@@ -46,6 +45,8 @@
 
         </div>
 
+
+          <form id="registroForm" action="../php/guardar_registro.php" method="post" novalidate>
 
           <div class="form-row">
 
@@ -100,7 +101,7 @@
                 <span class="input-icon">☎</span>
 
                 <input
-                  type="number"
+                  type="tel"
                   id="telefono"
                   name="telefono"
                   placeholder="300 123 4567"
@@ -178,11 +179,11 @@
 
           <p class="terms">
             Al registrarte aceptas nuestros
-            <a href="/modules/terminos_condiciones.html">
+            <a href="terminos_condiciones.html">
               Términos y condiciones
             </a>
             y
-            <a href="/modules/politica_privacidad.html">
+            <a href="politica_privacidad.html">
               Política de privacidad
             </a>.
           </p>
@@ -221,7 +222,6 @@
       </section>
 
     </main>
-    </form>
 
 
     <footer class="footer">

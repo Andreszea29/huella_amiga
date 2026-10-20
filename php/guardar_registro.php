@@ -2,21 +2,25 @@
 require("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre     = trim($_POST['nombre'] ?? '');
-    $email      = trim($_POST['email'] ?? '');
-    $telefono   = trim($_POST['telefono'] ?? '');
-    $nacimiento = $_POST['nacimiento'] ?? '';
-    $ciudad     = trim($_POST['ciudad'] ?? '');
-
+    $nombre     = limpiar($conn, 'nombre');
+    $email      = limpiar($conn, 'email');
+    $telefono   = limpiar($conn, 'telefono');
+    $nacimiento = limpiar($conn, 'nacimiento');
+    $ciudad     = limpiar($conn, 'ciudad');
     $password   = password_hash($_POST['password'] ?? '', PASSWORD_DEFAULT);
 
+    $existe = $conn->query("SELECT id FROM usuarios WHERE email = '$email'");
+    if ($existe->num_rows > 0) {
+        terminar("Ya existe una cuenta con ese correo.", "../modules/registro.html");
+    }
+
     $sql = "INSERT INTO usuarios (nombre, email, telefono, nacimiento, ciudad, password)
-         VALUES ('$nombre', '$email', '$telefono', '$nacimiento', '$ciudad', '$password')";
+            VALUES ('$nombre', '$email', '$telefono', '$nacimiento', '$ciudad', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-    echo "registro guardado correctamente.";
+        terminar("Registro completado. Ya puedes iniciar sesión.", "../modules/iniciarsesion.html");
     } else {
-    echo "Error" . $sql . "<br>" . $conn->error;
+        echo "Error: " . $conn->error;
     }
 }
 ?>

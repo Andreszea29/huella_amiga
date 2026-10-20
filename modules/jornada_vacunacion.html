@@ -14,7 +14,6 @@
             <ul></ul>
         </nav>
     </header>
-  <form action="" method="POST"> 
     <main class="container">
         <section class="hero">
             <div class="hero-content">
@@ -60,7 +59,8 @@
             <form class="form-card"
                   id="formVacunacion"
                   action="../php/guardar_vacunacion.php"
-                  method="POST">
+                  method="POST"
+                 >
 
                 <!-- Datos de contacto -->
                 <div class="form-group-section">
@@ -68,7 +68,7 @@
 
                     <div class="form-row">
                         <div class="field">
-                            <label for="nombre-dueno">Nombre del dueño</label>
+                            <label for="nombre_dueno">Nombre del dueño</label>
                             <input
                                 type="text"
                                 id="nombre_dueno"
@@ -112,7 +112,7 @@
 
                     <div class="form-row">
                         <div class="field">
-                            <label for="nombre-mascota">Nombre de la mascota</label>
+                            <label for="nombre_mascota">Nombre de la mascota</label>
                             <input
                                 type="text"
                                 id="nombre_mascota"
@@ -172,31 +172,31 @@
 
                     <div class="checkbox-grid">
                         <label class="checkbox-item">
-                            <input type="checkbox" id="vacunas" name="vacunas" value="Rabia">
+                            <input type="checkbox" name="vacunas[]" value="Rabia">
                             <span class="checkmark"></span>
                             Rabia
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" id="vacunas" name="vacunas" value="Parvovirus">
+                            <input type="checkbox" name="vacunas[]" value="Parvovirus">
                             <span class="checkmark"></span>
                             Parvovirus
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" id="vacunas" name="vacunas" value="Moquillo">
+                            <input type="checkbox" name="vacunas[]" value="Moquillo">
                             <span class="checkmark"></span>
                             Moquillo
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" id="vacunas" name="vacunas" value="Triple Felina">
+                            <input type="checkbox" name="vacunas[]" value="Triple Felina">
                             <span class="checkmark"></span>
                             Triple Felina
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" id="vacunas" name="vacunas" value="Desparasitación">
+                            <input type="checkbox" name="vacunas[]" value="Desparasitación">
                             <span class="checkmark"></span>
                             Desparasitación
                         </label>
@@ -216,7 +216,7 @@
                                 type="date"
                                 id="fecha"
                                 name="fecha"
-                                value="2026-10-15"
+                               
                                 required>
                         </div>
 
@@ -244,7 +244,6 @@
             </form>
         </section>
     </main>
-  </form>
     <footer>
         <p class="footer-contact">
             Asistencia o dudas adicionales: soporte@huellas.org |
@@ -260,5 +259,6 @@
     <!-- Conexiones a JavaScript -->
     <script src="../js/formulario.js"></script>
     <script src="../js/general.js"></script>
+    
 </body>
 </html>

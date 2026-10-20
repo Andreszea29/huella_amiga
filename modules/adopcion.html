@@ -8,17 +8,17 @@
 </head>
 <body>
    <header>
-        <img src="../imagenes/logo.png" alt="Logo de la página">
+        <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
         <nav>
             <ul>
                 <li>
                     <a href="publicar_mascota.html" class="btn btn-secondary">Publicar Mascota</a>
                 </li>
                 <li>
-                    <a href="" class="btn btn-secondary">Iniciar sesión</a>
+                    <a href="iniciarsesion.html" class="btn btn-secondary">Iniciar sesión</a>
                 </li>
                 <li>
-                    <a href="/modules/registro.html" class="btn btn-primary">Registrarse</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
                 </li>
             </ul>
         </nav>
@@ -35,25 +35,25 @@
             <div class="search-container">
                 <div class="search-input-wrapper">
                     <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Buscar tu nuevo mejor amigo (raza, edad, temperamento...)">
+                    <input type="text" id="buscador" placeholder="Buscar tu nuevo mejor amigo (raza, edad, temperamento...)">
                     <button class="btn-filter-icon">⚡</button>
                 </div>
 
                 <div class="filter-tags">
-                    <button class="tag active">Todos</button>
-                    <button class="tag">🐕 Perros</button>
-                    <button class="tag">🐱 Gatos</button>
-                    <button class="tag">🦜 Aves</button>
-                    <button class="tag">🐹 Hámsters</button>
+                    <button type="button" class="tag active" data-filtro="todos">Todos</button>
+                    <button type="button" class="tag" data-filtro="perro">🐕 Perros</button>
+                    <button type="button" class="tag" data-filtro="gato">🐱 Gatos</button>
+                    <button type="button" class="tag" data-filtro="ave">🦜 Aves</button>
+                    <button type="button" class="tag" data-filtro="hamster">🐹 Hámsters</button>
                 </div>
             </div>
         </section>
 
         <section class="pets-grid">
-            <div class="pet-card">
+            <div class="pet-card" data-tipo="perro">
                 <div class="card-image">
-                    <button class="fav-btn active">❤️</button>
-                    <img src="/imagenes/Luna.png" alt="Luna - Golden Retriever">
+                    <button type="button" class="fav-btn active">❤️</button>
+                    <img src="../imagenes/Luna.png" alt="Luna - Golden Retriever">
                 </div>
                 <div class="card-info">
                     <div class="card-header">
@@ -67,10 +67,10 @@
                 </div>
             </div>
 
-            <div class="pet-card">
+            <div class="pet-card" data-tipo="gato">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
-                    <img src="/imagenes/simba.png" alt="Simba - Gato Siamés">
+                    <button type="button" class="fav-btn">🤍</button>
+                    <img src="../imagenes/simba.png" alt="Simba - Gato Siamés">
                 </div>
                 <div class="card-info">
                     <div class="card-header">
@@ -84,10 +84,10 @@
                 </div>
             </div>
 
-            <div class="pet-card">
+            <div class="pet-card" data-tipo="ave">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
-                    <img src="/imagenes/pico.png" alt="Pico - Canario Amarillo">
+                    <button type="button" class="fav-btn">🤍</button>
+                    <img src="../imagenes/pico.png" alt="Pico - Canario Amarillo">
                 </div>
                 <div class="card-info">
                     <div class="card-header">
@@ -101,10 +101,10 @@
                 </div>
             </div>
 
-            <div class="pet-card">
+            <div class="pet-card" data-tipo="hamster">
                 <div class="card-image">
-                    <button class="fav-btn active">❤️</button>
-                    <img src="/imagenes/copito.png" alt="Copito - Hámster Ruso">
+                    <button type="button" class="fav-btn active">❤️</button>
+                    <img src="../imagenes/copito.png" alt="Copito - Hámster Ruso">
                 </div>
                 <div class="card-info">
                     <div class="card-header">
@@ -118,10 +118,10 @@
                 </div>
             </div>
 
-            <div class="pet-card">
+            <div class="pet-card" data-tipo="perro">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
-                    <img src="/imagenes/milo.png" alt="Milo - Border Collie">
+                    <button type="button" class="fav-btn">🤍</button>
+                    <img src="../imagenes/milo.png" alt="Milo - Border Collie">
                 </div>
                 <div class="card-info">
                     <div class="card-header">
@@ -135,10 +135,10 @@
                 </div>
             </div>
 
-            <div class="pet-card">
+            <div class="pet-card" data-tipo="gato">
                 <div class="card-image">
-                    <button class="fav-btn">🤍</button>
-                    <img src="/imagenes/kiwi.png" alt="Kiwi - Gato Angora">
+                    <button type="button" class="fav-btn">🤍</button>
+                    <img src="../imagenes/kiwi.png" alt="Kiwi - Gato Angora">
                 </div>
                 <div class="card-info">
                     <div class="card-header">
@@ -152,6 +152,7 @@
                 </div>
             </div>
         </section>
+        <p id="sin-resultados" hidden style="text-align:center;color:#666;margin:30px 0;">No encontramos mascotas con esa búsqueda 🐾</p>
     </main>
 
     <section class="cta-banner">
@@ -166,6 +167,6 @@
     </footer>
 
     <script src="../js/formulario.js"></script>
-    <script src ="../js/general.js"></script>
+    <script src="../js/general.js"></script>
 </body>
 </html>

@@ -42,17 +42,8 @@ function validarDatos(event) {
         return; // Detiene la ejecución, NO redirige
     }
 
-    // 5. SI TODO ESTÁ CORRECTO: Muestra éxito y redirige
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "¡Inicio de sesión exitoso!",
-        showConfirmButton: false,
-        timer: 1500
-    }).then(() => {
-        // Redirige únicamente cuando la validación pasó exitosamente
-        window.location.href = "../index.html";
-    });
+    // 5. Todo correcto: se envía el formulario a PHP para verificar en la base de datos
+    event.target.submit();
 }
 
 // Escuchar el evento submit del formulario

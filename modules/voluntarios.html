@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voluntarios</title>
-    <link rel="stylesheet" href="/css/voluntarios.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="../css/voluntarios.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <header>
-        <img src="../imagenes/logo.png" alt="Logo de la página"id="logo">
+        <img src="../imagenes/logo.png" alt="Logo de la página" id="logo">
     </header>
         <section class="hero">
             <div class="hero-content">
@@ -32,11 +32,12 @@
             <div class="hero-image">
                 <div class="image-wrapper">
                     <span class="floating-badge">Paseo Seguro Garantizado</span>
-                    <img src="/imagenes/chica_perro.png" alt="Chica paseando perro en el parque">
+                    <img src="../imagenes/chica_perro.png" alt="Chica paseando perro en el parque">
                 </div>
             </div>
         </section>
 
+        <form id="formPaseo" action="../php/guardar_voluntario.php" method="post">
         <div class="content-grid">
         
             <section class="form-section">
@@ -46,26 +47,25 @@
                     <p>Registra los datos de tu mascota y la dirección para que un paseador voluntario capacitado pase a recogerle de manera segura.</p>
                 </div>
 
-                <form action="" method="post">
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre-dueno">Nombre del dueño</label>
-                            <input type="text" id="nombre-dueno" name="nombre-dueno" placeholder="Ej. Carlos Mendoza">
+                            <input type="text" id="nombre-dueno" name="nombre-dueno" required placeholder="Ej. Carlos Mendoza">
                         </div>
                         <div class="field">
                             <label for="telefono">Teléfono de contacto</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. +52 55 1234 5678">
+                            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. +52 55 1234 5678">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre-mascota">Nombre de la mascota</label>
-                            <input type="text" id="nombre-mascota" name="nombre-mascota"  placeholder="Ej. Max">
+                            <input type="text" id="nombre-mascota" name="nombre-mascota" required  placeholder="Ej. Max">
                         </div>
                         <div class="field">
                             <label for="raza-mascota">Raza de la mascota</label>
-                            <input type="text" id="raza-mascota" name="raza-mascota" placeholder="Ej. Golden Retriever, Criollo">
+                            <input type="text" id="raza-mascota" name="raza-mascota" required placeholder="Ej. Golden Retriever, Criollo">
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@
 
                     <div class="field">
                         <label for="direccion">Dirección de recogida</label>
-                        <input type="text" id="direccion" name="direccion" placeholder="Calle Olivo #124, Col. Del Valle, Benito Juárez">
+                        <input type="text" id="direccion" name="direccion" required placeholder="Calle Olivo #124, Col. Del Valle, Benito Juárez">
                     </div>
 
                     <div class="field">
@@ -107,7 +107,7 @@
                         <label>Turnos de paseo disponibles</label>
                         <div class="shifts-list">
                             <label class="shift-card active">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" name="turnos[]" value="Mañana (7:00 - 9:00)" checked>
                                 <div>
                                     <strong>Mañana (7:00 - 9:00)</strong>
                                     <p>Ideal para comenzar el día con energía.</p>
@@ -115,7 +115,7 @@
                             </label>
 
                             <label class="shift-card">
-                                <input type="checkbox">
+                                <input type="checkbox" name="turnos[]" value="Tarde (12:00 - 14:00)">
                                 <div>
                                     <strong>Tarde (12:00 - 14:00)</strong>
                                     <p>Excelente descanso a mitad de jornada.</p>
@@ -123,7 +123,7 @@
                             </label>
 
                             <label class="shift-card">
-                                <input type="checkbox">
+                                <input type="checkbox" name="turnos[]" value="Noche (17:00 - 19:00)">
                                 <div>
                                     <strong>Noche (17:00 - 19:00)</strong>
                                     <p>Para un sueño reparador y relajación nocturna.</p>
@@ -140,33 +140,33 @@
                     <p class="card-subtitle">Las cuotas cubren insumos, premios y el seguro de voluntario.</p>
 
                     <div class="plans-list">
-                        <div class="plan-card">
+                        <div class="plan-card" data-plan="Paseo Único" data-precio="10000">
                             <div class="plan-header">
                                 <span class="plan-icon">⭐</span>
                                 <button type="button" class="btn-select">Seleccionar</button>
+                                <span class="badge-selected">SELECCIONADO</span>
                             </div>
                             <h4>Paseo Único</h4>
                             <p>1 paseo de 1 hora</p>
                             <span class="plan-price">$10.000 COP</span>
                         </div>
 
-                        <div class="plan-card selected">
+                        <div class="plan-card selected" data-plan="Paquete Semanal" data-precio="55000">
                             <div class="plan-header">
                                 <span class="plan-icon">📋</span>
+                                <button type="button" class="btn-select">Seleccionar</button>
                                 <span class="badge-selected">SELECCIONADO</span>
                             </div>
                             <h4>Paquete Semanal</h4>
                             <p>7 días de paseos diarios</p>
-                            <div class="plan-footer">
-                                <span class="plan-price">$55.000 COP</span>
-                                <span class="badge-active">Elegido</span>
-                            </div>
+                            <span class="plan-price">$55.000 COP</span>
                         </div>
 
-                        <div class="plan-card">
+                        <div class="plan-card" data-plan="Paquete Mensual" data-precio="180000">
                             <div class="plan-header">
                                 <span class="plan-icon">📅</span>
                                 <button type="button" class="btn-select">Seleccionar</button>
+                                <span class="badge-selected">SELECCIONADO</span>
                             </div>
                             <h4>Paquete Mensual</h4>
                             <p>30 días de paseos continuos</p>
@@ -197,10 +197,9 @@
 
         
         <div class="submit-wrapper">
-            <button type="submit" class="btn-submit" onclick="irAInicio(event)">Solicitar Voluntario ➔</button>
+            <button type="submit" class="btn-submit">Solicitar Voluntario ➔</button>
             <p class="disclaimer">Al enviar tu solicitud, buscaremos un paseador compatible en tu zona. El servicio está sujeto a disponibilidad geográfica y de cupos de voluntarios PawSpa.</p>
         </div>
-    </main>
     </form>
 
     <footer>
@@ -209,5 +208,6 @@
 
 
     <script src="../js/general.js"></script>
+    <script src="../js/voluntarios.js"></script>
 </body>
 </html>

@@ -2,16 +2,17 @@
 require("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email    = trim($_POST['email'] ?? '');
+    $email    = limpiar($conn, 'email');
     $password = $_POST['password'] ?? '';
 
-   $sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
-    $resultado = $conn->query($sql);
+    $resultado = $conn->query("SELECT * FROM usuarios WHERE email = '$email'");
+    $usuario = $resultado->fetch_assoc();
 
-    if ($resultado->num_rows > 0) {
-    echo "Bienvenido, inicio de sesión correcto.";
+    // La contraseña está guardada con hash, por eso se usa password_verify
+    if ($usuario && password_verify($password, $usuario['password'])) {
+        terminar("Bienvenido, inicio de sesión correcto.", "../modules/index.html");
     } else {
-    echo "Correo o contraseña incorrectos.";
+        terminar("Correo o contraseña incorrectos.", "../modules/iniciarsesion.html");
     }
 }
 ?>

@@ -2,29 +2,25 @@
 require("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre_dueno   = trim($_POST['nombre_dueno'] ?? '');
-    $telefono       = trim($_POST['telefono'] ?? '');
-    $correo         = trim($_POST['correo'] ?? '');
+    $nombre_dueno = limpiar($conn, 'nombre_dueno');
+    $telefono = limpiar($conn, 'telefono');
+    $correo = limpiar($conn, 'correo');
+    $nombre_mascota = limpiar($conn, 'nombre_mascota');
+    $tipo_mascota = limpiar($conn, 'tipo_mascota');
+    $raza = limpiar($conn, 'raza');
+    $edad = limpiar($conn, 'edad');
+    $peso = limpiar($conn, 'peso');
+    $vacunas = unir($conn, 'vacunas');
+    $fecha = limpiar($conn, 'fecha');
+    $horario = limpiar($conn, 'horario');
 
-    $nombre_mascota = trim($_POST['nombre_mascota'] ?? '');
-    $tipo_mascota   = $_POST['tipo_mascota'] ?? '';
-    $raza           = trim($_POST['raza'] ?? '');
-    $edad           = trim($_POST['edad'] ?? '');
-    $peso           = trim($_POST['peso'] ?? '');
-
-    $vacunas        = isset($_POST['vacunas']) ? implode(", ", $_POST['vacunas']) : '';
-
-    $fecha          = $_POST['fecha'] ?? '';
-    $horario        = $_POST['horario'] ?? '';
-    
     $sql = "INSERT INTO vacunaciones (nombre_dueno, telefono, correo, nombre_mascota, tipo_mascota, raza, edad, peso, vacunas, fecha, horario)
-        VALUES ('$nombre_dueno', '$telefono', '$correo', '$nombre_mascota', '$tipo_mascota', '$raza', '$edad', '$peso', '$vacunas', '$fecha', '$horario')";
+            VALUES ('$nombre_dueno', '$telefono', '$correo', '$nombre_mascota', '$tipo_mascota', '$raza', '$edad', '$peso', '$vacunas', '$fecha', '$horario')";
 
     if ($conn->query($sql) === TRUE) {
-    echo "registro guardado correctamente.";
+        terminar("Tu cita de vacunación quedó registrada.", "../modules/index.html");
     } else {
-    echo "Error" . $sql . "<br>" . $conn->error;
+        echo "Error: " . $conn->error;
     }
 }
-
 ?>

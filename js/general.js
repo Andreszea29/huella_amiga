@@ -1,22 +1,17 @@
-const imagen = document.querySelector('#logo'); 
+const imagen = document.querySelector('#logo');
 if (imagen) {
     imagen.addEventListener('click', () => {
-        window.location.href = '/index.html';
+        window.location.href = 'index.html';
     });
 }
 const logoTyC = document.querySelector('#logoTyC');
 if (logoTyC) {
-    logoTyC.addEventListener('click', () =>{
-        window.location.href = '/modules/registro.html';
+    logoTyC.addEventListener('click', () => {
+        window.location.href = 'registro.html';
     });
 }
 
 function irAInicio(event) {
-
     event.preventDefault();
-    
-    window.location.href = "../index.html";
+    window.location.href = "index.html";
 }
-
-
-

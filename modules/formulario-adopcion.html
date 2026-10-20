@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <img src="../imagenes/logo.png" alt="Logo de Huellas">
+        <img src="../imagenes/logo.png" alt="Logo de Huellas" id="logo">
         <nav>
             <ul>
                 <li><a href="adopcion.html">Adopción</a></li>
@@ -40,7 +40,7 @@
             <div class="hero-image">
                 <div class="image-wrapper">
                     <span class="floating-badge">🤍 Amor de verdad</span>
-                    <img src="/imagenes/personaperro.png" alt="Persona abrazando a su perro">
+                    <img src="../imagenes/personaperro.png" alt="Persona abrazando a su perro">
                 </div>
             </div>
         </section>
@@ -53,7 +53,7 @@
                     <p>Por favor, ingresa información honesta y detallada sobre tu entorno. Esto nos ayudará a garantizar una transición feliz y segura para la mascota.</p>
                 </div>
 
-                <form class="form-card">
+                <form class="form-card" id="formAdopcion" action="../php/guardar_adopcion.php" method="post">
                     <div class="form-group-title">
                         <h3>Datos del adoptante</h3>
                     </div>
@@ -61,22 +61,22 @@
                     <div class="form-row">
                         <div class="field">
                             <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" placeholder="Ej. Ana María Martínez">
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana María Martínez">
                         </div>
                         <div class="field">
                             <label for="correo">Correo electrónico</label>
-                            <input type="email" id="correo" placeholder="Ej. ana@ejemplo.com">
+                            <input type="email" id="correo" name="correo" required placeholder="Ej. ana@ejemplo.com">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="field">
                             <label for="telefono">Teléfono de contacto</label>
-                            <input type="tel" id="telefono" placeholder="Ej. +57 300 123 4567">
+                            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. +57 300 123 4567">
                         </div>
                         <div class="field">
                             <label for="ciudad">Ciudad de residencia</label>
-                            <input type="text" id="ciudad" placeholder="Ej. Bogotá">
+                            <input type="text" id="ciudad" name="ciudad" required placeholder="Ej. Bogotá">
                         </div>
                     </div>
 
@@ -114,12 +114,12 @@
 
                     <div class="field">
                         <label for="otras-mascotas">Si respondiste sí, ¿cuáles?</label>
-                        <input type="text" id="otras-mascotas" placeholder="Ej. Un perro criollo de 3 años, un gato siamés">
+                        <input type="text" id="otras-mascotas" name="otras_mascotas" placeholder="Ej. Un perro criollo de 3 años, un gato siamés">
                     </div>
 
                     <div class="field">
                         <label for="personas-hogar">Número de personas en el hogar</label>
-                        <input type="text" id="personas-hogar" placeholder="Ej. 3">
+                        <input type="number" id="personas-hogar" name="personas_hogar" placeholder="Ej. 3" min="1" max="30" required>
                     </div>
 
                     <hr class="divider">
@@ -142,24 +142,24 @@
                         <div class="field">
                             <label>Preferencia de tamaño</label>
                             <div class="checkbox-list">
-                                <label><input type="checkbox" checked> Pequeño (0-10 kg)</label>
-                                <label><input type="checkbox" checked> Mediano (11-25 kg)</label>
-                                <label><input type="checkbox"> Grande (25+ kg)</label>
+                                <label><input type="checkbox" name="tamano[]" value="Pequeño" checked> Pequeño (0-10 kg)</label>
+                                <label><input type="checkbox" name="tamano[]" value="Mediano" checked> Mediano (11-25 kg)</label>
+                                <label><input type="checkbox" name="tamano[]" value="Grande"> Grande (25+ kg)</label>
                             </div>
                         </div>
                         <div class="field">
                             <label>Preferencia de edad</label>
                             <div class="checkbox-list">
-                                <label><input type="checkbox" checked> Cachorro (0-1 año)</label>
-                                <label><input type="checkbox" checked> Joven (1-5 años)</label>
-                                <label><input type="checkbox"> Adulto (5+ años)</label>
+                                <label><input type="checkbox" name="edad_pref[]" value="Cachorro" checked> Cachorro (0-1 año)</label>
+                                <label><input type="checkbox" name="edad_pref[]" value="Joven" checked> Joven (1-5 años)</label>
+                                <label><input type="checkbox" name="edad_pref[]" value="Adulto"> Adulto (5+ años)</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="field">
                         <label for="mascota-mente">¿Tienes alguna mascota en mente?</label>
-                        <input type="text" id="mascota-mente" placeholder="Ej. Luna">
+                        <input type="text" id="mascota-mente" name="mascota_mente" placeholder="Ej. Luna">
                         <span class="field-hint">Si viste una mascota específica en nuestro catálogo, escribe su nombre aquí.</span>
                     </div>
 
@@ -171,15 +171,15 @@
 
                     <div class="checkbox-group">
                         <label class="checkbox-option">
-                            <input type="checkbox" checked>
+                            <input type="checkbox" name="compromisos[]" value="Alimentación y atención veterinaria">
                             <span>Me comprometo a brindar alimentación adecuada y atención veterinaria oportuna.</span>
                         </label>
                         <label class="checkbox-option">
-                            <input type="checkbox" checked>
+                            <input type="checkbox" name="compromisos[]" value="Visita de seguimiento">
                             <span>Acepto la visita de seguimiento post-adopción por parte del equipo de Huellas.</span>
                         </label>
                         <label class="checkbox-option">
-                            <input type="checkbox" checked>
+                            <input type="checkbox" name="compromisos[]" value="Compromiso de por vida">
                             <span>Entiendo que la adopción es un compromiso de por vida y que requiere paciencia.</span>
                         </label>
                     </div>
@@ -224,7 +224,7 @@
         </div>
 
         <div class="submit-wrapper">
-            <button type="submit" class="btn-submit" onclick="irAInicio(event)">Enviar Solicitud de Adopción ➔</button>
+            <button type="submit" class="btn-submit" form="formAdopcion">Enviar Solicitud de Adopción ➔</button>
             <p class="disclaimer">Al enviar tu solicitud, aceptas que revisemos tus datos únicamente para el proceso de validación en el proceso de adopción de Huellas.</p>
         </div>
     </main>
@@ -236,6 +236,6 @@
 
     <!-- conexion a js NO BORRAR y dejar siempre de último -->
     <script src="../js/formulario.js"></script>
-    <script src ="../js/general.js"></script>
+    <script src="../js/general.js"></script>
 </body>
 </html>
