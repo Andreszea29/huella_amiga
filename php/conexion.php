@@ -1,4 +1,7 @@
 <?php
+// La sesión guarda quién inició sesión, para relacionar sus datos en la base
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -20,6 +23,11 @@ function limpiar($conn, $campo) {
 function unir($conn, $campo) {
     $valores = isset($_POST[$campo]) ? (array)$_POST[$campo] : [];
     return $conn->real_escape_string(implode(", ", $valores));
+}
+
+// Devuelve el id del usuario con sesión iniciada (o NULL si no ha iniciado sesión)
+function usuario_actual() {
+    return isset($_SESSION['usuario_id']) ? (int)$_SESSION['usuario_id'] : 'NULL';
 }
 
 // Muestra un mensaje y manda al usuario a otra página

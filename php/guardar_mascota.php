@@ -19,9 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ciudad_contacto = limpiar($conn, 'ciudad-contacto');
     $motivo = limpiar($conn, 'motivo-publicacion');
     $confirmaciones = unir($conn, 'confirmaciones');
+    $usuario_id = usuario_actual();
 
-    $sql = "INSERT INTO mascotas (nombre_mascota, raza_mascota, tipo_mascota, edad_mascota, peso_mascota, sexo, tamano, esterilizado, vacunas, temperamento, descripcion, nombre_contacto, correo_contacto, telefono_contacto, ciudad_contacto, motivo, confirmaciones)
-            VALUES ('$nombre_mascota', '$raza_mascota', '$tipo_mascota', '$edad_mascota', '$peso_mascota', '$sexo', '$tamano', '$esterilizado', '$vacunas', '$temperamento', '$descripcion', '$nombre_contacto', '$correo_contacto', '$telefono_contacto', '$ciudad_contacto', '$motivo', '$confirmaciones')";
+    $sql = "INSERT INTO mascotas (usuario_id, nombre_mascota, raza_mascota, tipo_mascota, edad_mascota, peso_mascota, sexo, tamano, esterilizado, vacunas, temperamento, descripcion, nombre_contacto, correo_contacto, telefono_contacto, ciudad_contacto, motivo, confirmaciones)
+            VALUES ($usuario_id, '$nombre_mascota', '$raza_mascota', '$tipo_mascota', '$edad_mascota', '$peso_mascota', '$sexo', '$tamano', '$esterilizado', '$vacunas', '$temperamento', '$descripcion', '$nombre_contacto', '$correo_contacto', '$telefono_contacto', '$ciudad_contacto', '$motivo', '$confirmaciones')";
 
     if ($conn->query($sql) === TRUE) {
         terminar("Mascota enviada. La revisaremos en 48 horas.", "../modules/adopcion.html");

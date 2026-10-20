@@ -13,9 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $vacunas = unir($conn, 'vacunas');
     $fecha = limpiar($conn, 'fecha');
     $horario = limpiar($conn, 'horario');
+    $usuario_id = usuario_actual();
 
-    $sql = "INSERT INTO vacunaciones (nombre_dueno, telefono, correo, nombre_mascota, tipo_mascota, raza, edad, peso, vacunas, fecha, horario)
-            VALUES ('$nombre_dueno', '$telefono', '$correo', '$nombre_mascota', '$tipo_mascota', '$raza', '$edad', '$peso', '$vacunas', '$fecha', '$horario')";
+    $sql = "INSERT INTO vacunaciones (usuario_id, nombre_dueno, telefono, correo, nombre_mascota, tipo_mascota, raza, edad, peso, vacunas, fecha, horario)
+            VALUES ($usuario_id, '$nombre_dueno', '$telefono', '$correo', '$nombre_mascota', '$tipo_mascota', '$raza', '$edad', '$peso', '$vacunas', '$fecha', '$horario')";
 
     if ($conn->query($sql) === TRUE) {
         terminar("Tu cita de vacunación quedó registrada.", "../modules/index.html");

@@ -16,9 +16,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $edad_pref = unir($conn, 'edad_pref');
     $mascota_mente = limpiar($conn, 'mascota_mente');
     $compromisos = unir($conn, 'compromisos');
+    $usuario_id = usuario_actual();
 
-    $sql = "INSERT INTO solicitudes_adopcion (nombre, correo, telefono, ciudad, vivienda, patio, mascotas, otras_mascotas, personas_hogar, tipo_mascota, tamano, edad_pref, mascota_mente, compromisos)
-            VALUES ('$nombre', '$correo', '$telefono', '$ciudad', '$vivienda', '$patio', '$mascotas', '$otras_mascotas', '$personas_hogar', '$tipo_mascota', '$tamano', '$edad_pref', '$mascota_mente', '$compromisos')";
+    // Relaciona la solicitud con la mascota elegida (si existe en la tabla mascotas)
+    $mascota_id = 'NULL';
+    if ($mascota_mente != '') {
+        $m = $conn->query("SELECT id FROM mascotas WHERE nombre_mascota = '$mascota_mente' LIMIT 1");
+        if ($m && $fila = $m->fetch_assoc()) {
+            $mascota_id = (int)$fila['id'];
+        }
+    }
+
+    $sql = "INSERT INTO solicitudes_adopcion (usuario_id, mascota_id, nombre, correo, telefono, ciudad, vivienda, patio, mascotas, otras_mascotas, personas_hogar, tipo_mascota, tamano, edad_pref, mascota_mente, compromisos)
+            VALUES ($usuario_id, $mascota_id, '$nombre', '$correo', '$telefono', '$ciudad', '$vivienda', '$patio', '$mascotas', '$otras_mascotas', '$personas_hogar', '$tipo_mascota', '$tamano', '$edad_pref', '$mascota_mente', '$compromisos')";
 
     if ($conn->query($sql) === TRUE) {
         terminar("Solicitud de adopción enviada. La revisaremos en 48 horas.", "../modules/index.html");
