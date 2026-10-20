@@ -16,5 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $fecha          = $_POST['fecha'] ?? '';
     $horario        = $_POST['horario'] ?? '';
+    
+    $sql = "INSERT INTO vacunaciones (nombre_dueno, telefono, correo, nombre_mascota, tipo_mascota, raza, edad, peso, vacunas, fecha, horario)
+        VALUES ('$nombre_dueno', '$telefono', '$correo', '$nombre_mascota', '$tipo_mascota', '$raza', '$edad', '$peso', '$vacunas', '$fecha', '$horario')";
+
+    if ($conn->query($sql) === TRUE) {
+    echo "registro guardado correctamente.";
+    } else {
+    echo "Error" . $sql . "<br>" . $conn->error;
+    }
 }
+
 ?>

@@ -18,5 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Compromisos aceptados
     $compromisos    = isset($_POST['compromisos']) ? implode(", ", $_POST['compromisos']) : '';
+
+    $sql = "INSERT INTO solicitudes_adopcion (nombre, correo, telefono, ciudad, vivienda, patio, mascotas, otras_mascotas, personas_hogar, tipo_mascota, tamano, edad_pref, mascota_mente, compromisos)
+                VALUES ('$nombre', '$correo', '$telefono', '$ciudad', '$vivienda', '$patio', '$mascotas', '$otras_mascotas', '$personas_hogar', '$tipo_mascota', '$tamano', '$edad_pref', '$mascota_mente', '$compromisos')";
+
+    if ($conn->query($sql) === TRUE) {
+    echo "registro guardado correctamente.";
+    } else {
+    echo "Error" . $sql . "<br>" . $conn->error;
+    }
 }
 ?>

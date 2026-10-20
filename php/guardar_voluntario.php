@@ -11,5 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $dias           = isset($_POST['dias']) ? implode(", ", $_POST['dias']) : '';
     $turnos         = isset($_POST['turnos']) ? implode(", ", $_POST['turnos']) : '';
+
+    $sql = "INSERT INTO solicitudes_paseo (nombre_dueno, telefono, nombre_mascota, raza_mascota, tamano, direccion, dias, turnos)
+        VALUES ('$nombre_dueno', '$telefono', '$nombre_mascota', '$raza_mascota', '$tamano', '$direccion', '$dias', '$turnos')";
+
+    if ($conn->query($sql) === TRUE) {
+    echo "registro guardado correctamente.";
+    } else {
+    echo "Error" . $sql . "<br>" . $conn->error;
+    }
 }
 ?>
