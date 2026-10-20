@@ -304,3 +304,23 @@ footer {
         padding: 0 20px;
     }
 }
+.btn-vacuna {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.btn-vacuna:hover {
+    background-color: #218838;
+}
+
+.btn-vacuna:active {
+    background-color: #1e7e34;
+    transform: scale(0.98);
+}

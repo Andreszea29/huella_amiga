@@ -71,7 +71,7 @@
                             <label for="nombre-dueno">Nombre del dueño</label>
                             <input
                                 type="text"
-                                id="nombre-dueno"
+                                id="nombre_dueno"
                                 name="nombre_dueno"
                                 placeholder="Ej. María Pérez"
                                 autocomplete="name"
@@ -115,7 +115,7 @@
                             <label for="nombre-mascota">Nombre de la mascota</label>
                             <input
                                 type="text"
-                                id="nombre-mascota"
+                                id="nombre_mascota"
                                 name="nombre_mascota"
                                 placeholder="Ej. Luna"
                                 required>
@@ -172,31 +172,31 @@
 
                     <div class="checkbox-grid">
                         <label class="checkbox-item">
-                            <input type="checkbox" name="vacunas[]" value="Rabia">
+                            <input type="checkbox" id="vacunas" name="vacunas" value="Rabia">
                             <span class="checkmark"></span>
                             Rabia
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" name="vacunas[]" value="Parvovirus">
+                            <input type="checkbox" id="vacunas" name="vacunas" value="Parvovirus">
                             <span class="checkmark"></span>
                             Parvovirus
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" name="vacunas[]" value="Moquillo">
+                            <input type="checkbox" id="vacunas" name="vacunas" value="Moquillo">
                             <span class="checkmark"></span>
                             Moquillo
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" name="vacunas[]" value="Triple Felina">
+                            <input type="checkbox" id="vacunas" name="vacunas" value="Triple Felina">
                             <span class="checkmark"></span>
                             Triple Felina
                         </label>
 
                         <label class="checkbox-item">
-                            <input type="checkbox" name="vacunas[]" value="Desparasitación">
+                            <input type="checkbox" id="vacunas" name="vacunas" value="Desparasitación">
                             <span class="checkmark"></span>
                             Desparasitación
                         </label>
@@ -232,15 +232,9 @@
                 </div>
 
                 <div style="text-align: center; margin: 20px 0;">
-                    <button
-                        type="submit"
-                        style="display: inline-block; padding: 10px 20px;
-                        background-color: #28a745; color: white;
-                        border: none; border-radius: 6px;
-                        font-weight: bold; font-family: sans-serif;
-                        cursor: pointer;">
-                        Listo para la vacuna ➔
-                    </button>
+                    <button type="submit" class="btn-vacuna">
+                    Listo para la vacuna ➔
+                     </button>
                 </div>
 
                 <p class="form-disclaimer">
