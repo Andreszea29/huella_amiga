@@ -90,7 +90,7 @@ function validarDatos(event) {
 
 
   
-    // Todo correcto: se envía el formulario a PHP para guardarlo en la base de datos
+
     event.target.submit();
 }
 

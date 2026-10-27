@@ -1,5 +1,5 @@
 <?php
-// La sesión guarda quién inició sesión, para relacionar sus datos en la base
+
 session_start();
 
 $servername = "localhost";
@@ -14,23 +14,23 @@ if ($conn->connect_error) {
 }
 $conn->set_charset("utf8mb4");
 
-// Limpia un dato del formulario para guardarlo de forma segura
+
 function limpiar($conn, $campo) {
     return $conn->real_escape_string(trim($_POST[$campo] ?? ''));
 }
 
-// Une las casillas marcadas (name="campo[]") en un solo texto
+
 function unir($conn, $campo) {
     $valores = isset($_POST[$campo]) ? (array)$_POST[$campo] : [];
     return $conn->real_escape_string(implode(", ", $valores));
 }
 
-// Devuelve el id del usuario con sesión iniciada (o NULL si no ha iniciado sesión)
+
 function usuario_actual() {
     return isset($_SESSION['usuario_id']) ? (int)$_SESSION['usuario_id'] : 'NULL';
 }
 
-// Muestra un mensaje y manda al usuario a otra página
+
 function terminar($mensaje, $destino) {
     echo "<script>alert('" . addslashes($mensaje) . "'); window.location.href='" . $destino . "';</script>";
     exit;

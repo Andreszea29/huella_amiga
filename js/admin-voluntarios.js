@@ -1,6 +1,4 @@
-// ===============================================================
-// Panel de solicitudes de paseo con voluntarios
-// ===============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('lista-paseos');
     if (!grid) return;

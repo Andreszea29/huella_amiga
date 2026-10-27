@@ -1,10 +1,4 @@
-// ===============================================================
-// Envío por AJAX de todos los formularios con atributo data-ajax
-// (vacunación, spa, paseos, adopción, publicar mascota)
-// Requiere general.js y SweetAlert2 cargados antes.
-// ===============================================================
 
-// Mínimo de casillas marcadas por grupo, según el id del formulario
 const GRUPOS = {
     formVacunacion: [{ name: 'vacunas[]',        min: 1, msg: 'Selecciona al menos una vacuna.' }],
     formSpa:        [{ name: 'horarios[]',       min: 1, msg: 'Selecciona al menos un horario disponible.' }],

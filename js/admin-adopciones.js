@@ -1,6 +1,4 @@
-// ===============================================================
-// Panel de solicitudes de adopción
-// ===============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('lista-adopciones');
     if (!grid) return;

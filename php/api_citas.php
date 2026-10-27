@@ -2,7 +2,7 @@
 require("conexion.php");
 header('Content-Type: application/json; charset=utf-8');
 
-// Recibe {id, estado} desde admin_citas.js y actualiza la cita
+
 $datos  = json_decode(file_get_contents('php://input'), true);
 $id     = (int)($datos['id'] ?? 0);
 $estado = $conn->real_escape_string($datos['estado'] ?? '');

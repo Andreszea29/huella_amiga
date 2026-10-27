@@ -1,10 +1,5 @@
 <?php
-// ---------------------------------------------------------------
-// API del panel administrativo (solo para usuarios con rol "admin")
-//   GET  api_admin.php?tipo=vacunaciones   -> lista de registros
-//   POST api_admin.php  {tipo, id, estado} -> cambia el estado
-//   POST api_admin.php  {tipo, id, accion:"eliminar"} -> borra
-// ---------------------------------------------------------------
+
 require("conexion.php");
 iniciar_sesion();
 
@@ -12,7 +7,7 @@ if (($_SESSION['rol'] ?? '') !== 'admin') {
     responder(false, 'Acceso restringido: inicia sesión con una cuenta de administrador.', ['redirect' => 'iniciarsesion.html'], 403);
 }
 
-// Lista blanca de tablas y estados (nunca se interpola input del usuario)
+
 $tablas = [
     'vacunaciones' => ['tabla' => 'vacunaciones',          'estados' => ['Pendiente', 'Confirmado', 'Cancelado']],
     'spa'          => ['tabla' => 'voluntarios_spa',       'estados' => ['Pendiente', 'Aprobado']],

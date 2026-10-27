@@ -1,6 +1,4 @@
-// ===============================================================
-// Subida de fotos (1 a 5, JPG/PNG, máx. 5 MB) con vista previa
-// ===============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const caja   = document.querySelector('.upload-box');
     const input  = document.getElementById('fotos');
@@ -86,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
     caja.addEventListener('drop', e => agregar([...e.dataTransfer.files]));
 
-    // Validar mínimo 1 foto antes de enviar
+  
     window.hooksFormulario = window.hooksFormulario || {};
     window.hooksFormulario.formMascota = () =>
         archivos.length < 1 ? 'Sube al menos una foto de la mascota.' : null;

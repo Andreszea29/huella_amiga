@@ -1,6 +1,4 @@
-// ===============================================================
-// Catálogo de adopción: búsqueda, filtros y favoritos
-// ===============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const tarjetas = document.querySelectorAll('.pet-card');
     const buscador = document.getElementById('buscador');

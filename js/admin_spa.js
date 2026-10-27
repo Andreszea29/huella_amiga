@@ -1,6 +1,4 @@
-// ===============================================================
-// Panel de voluntarios del spa
-// ===============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const tbody = document.querySelector('.table-container tbody');
     if (!tbody) return;

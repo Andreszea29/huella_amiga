@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $compromisos = unir($conn, 'compromisos');
     $usuario_id = usuario_actual();
 
-    // Relaciona la solicitud con la mascota elegida (si existe en la tabla mascotas)
+ 
     $mascota_id = 'NULL';
     if ($mascota_mente != '') {
         $m = $conn->query("SELECT id FROM mascotas WHERE nombre_mascota = '$mascota_mente' LIMIT 1");

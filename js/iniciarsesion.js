@@ -1,5 +1,5 @@
 function validarDatos(event) {
-    // 1. Detener el envío/recarga del formulario obligatoriamente
+
     if (event) {
         event.preventDefault();
     }
@@ -7,7 +7,7 @@ function validarDatos(event) {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    // 2. Validar que los campos no estén vacíos
+
     if (!email || !password) {
         Swal.fire({
             position: "top-end",
@@ -17,10 +17,9 @@ function validarDatos(event) {
             showConfirmButton: false,
             timer: 1800
         });
-        return; // Detiene la ejecución, NO redirige
+        return; 
     }
 
-    // 3. Validar formato de correo electrónico
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
         Swal.fire({
@@ -28,10 +27,10 @@ function validarDatos(event) {
             title: "Correo inválido",
             text: "Ingresa un correo electrónico válido (ejemplo@dominio.com)."
         });
-        return; // Detiene la ejecución, NO redirige
+        return; 
     }
 
-    // 4. Validar formato de contraseña (Mínimo 8 caracteres, mayúscula, minúscula, número y carácter especial)
+    
     const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
     if (!regexPassword.test(password)) {
         Swal.fire({
@@ -39,14 +38,13 @@ function validarDatos(event) {
             title: "Contraseña insegura",
             text: "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial."
         });
-        return; // Detiene la ejecución, NO redirige
+        return; 
     }
 
-    // 5. Todo correcto: se envía el formulario a PHP para verificar en la base de datos
     event.target.submit();
 }
 
-// Escuchar el evento submit del formulario
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
@@ -54,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Función para mostrar/ocultar contraseña
+
 function mostrarPassword() {
     const passInput = document.getElementById("password");
     if (passInput) {

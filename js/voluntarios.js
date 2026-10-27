@@ -1,9 +1,9 @@
-// Voluntarios: días de la semana y plan elegido
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('formPaseo');
     if (!form) return;
 
-    // Los botones de día se activan/desactivan al hacer clic
+
     document.querySelectorAll('.days-selector .day-btn').forEach(btn => {
         btn.dataset.dia = btn.textContent.replace('✓', '').trim();
         btn.addEventListener('click', () => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Elegir plan y actualizar el total
+
     const planes = document.querySelectorAll('.plan-card[data-plan]');
     const total = document.querySelector('.cost-total .total-price');
     planes.forEach(card => {
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Al enviar, se agregan al formulario los días y el plan
     form.addEventListener('submit', (e) => {
         const dias = document.querySelectorAll('.days-selector .day-btn.active');
         if (dias.length === 0) {
