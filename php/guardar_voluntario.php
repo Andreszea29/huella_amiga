@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         terminar("Solicitud de paseo enviada.", "../modules/index.html");
     } else {
-        echo "Error: " . $conn->error;
+        terminar("No se pudo guardar. Intenta de nuevo.", "back", "error");
     }
 }
 ?>

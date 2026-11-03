@@ -49,24 +49,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const accion = boton.textContent.trim();
 
         if (accion === 'Editar') {
-            alert(`✏️ Edición de la cita #${id} (${mascota}) próximamente.`);
+            Swal.fire({ icon: 'info', title: 'Próximamente', text: `La edición de la cita #${id} (${mascota}) estará disponible pronto.`, confirmButtonColor: '#28a745' });
             return;
         }
 
         const estado = accion === 'Confirmar' ? 'Confirmado' : 'Cancelado';
         const verbo  = accion === 'Confirmar' ? 'confirmar' : 'cancelar';
 
-        if (!confirm(`¿Seguro que deseas ${verbo} la cita de ${mascota}?`)) return;
+        const decision = await Swal.fire({
+            icon: 'question',
+            title: `¿Seguro que deseas ${verbo} la cita de ${mascota}?`,
+            showCancelButton: true,
+            confirmButtonText: `Sí, ${verbo}`,
+            cancelButtonText: 'No',
+            confirmButtonColor: '#28a745'
+        });
+        if (!decision.isConfirmed) return;
 
         try {
             await actualizarEstado(id, estado);
             pintarEstado(fila, estado);
             pintarAcciones(fila, estado);
-            alert(estado === 'Confirmado'
-                ? `✅ La cita de ${mascota} fue confirmada.`
-                : `❌ La cita de ${mascota} fue cancelada.`);
+            Swal.fire({
+                icon: estado === 'Confirmado' ? 'success' : 'info',
+                title: estado === 'Confirmado' ? `La cita de ${mascota} fue confirmada` : `La cita de ${mascota} fue cancelada`,
+                timer: 2000,
+                showConfirmButton: false
+            });
         } catch (err) {
-            alert('⚠️ No se pudo actualizar la cita: ' + err.message);
+            Swal.fire({ icon: 'error', title: 'No se pudo actualizar la cita', text: err.message, confirmButtonColor: '#28a745' });
         }
     });
 });

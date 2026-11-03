@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $existe = $conn->query("SELECT id FROM usuarios WHERE email = '$email'");
     if ($existe->num_rows > 0) {
-        terminar("Ya existe una cuenta con ese correo.", "../modules/registro.html");
+        terminar("Ya existe una cuenta con ese correo.", "back", "error");
     }
 
     $sql = "INSERT INTO usuarios (nombre, email, telefono, nacimiento, ciudad, password)
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         terminar("Registro completado. Ya puedes iniciar sesión.", "../modules/iniciarsesion.html");
     } else {
-        echo "Error: " . $conn->error;
+        terminar("No se pudo guardar. Intenta de nuevo.", "back", "error");
     }
 }
 ?>

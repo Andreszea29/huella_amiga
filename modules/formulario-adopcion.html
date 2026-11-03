@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="../css/formulario-adopcion.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
-<body>
+<body data-requiere-login="Para solicitar una adopción necesitas iniciar sesión.">
     <header>
         <img src="../imagenes/logo.png" alt="Logo de Huellas" id="logo">
         <nav>
             <ul>
                 <li><a href="adopcion.html">Adopción</a></li>
                 <li><a href="publicar_mascota.html">Publicar Mascota</a></li>
-                <li><a href="voluntarios.html">Voluntariado</a></li>
+                <li><a href="voluntarios.html">Solicitar paseo</a></li>
                 <li><a href="#">Donaciones</a></li>
                 <li><a href="#">Nosotros</a></li>
             </ul>
@@ -55,6 +55,7 @@
 
                 <form class="form-card" id="formAdopcion" action="../php/guardar_adopcion.php" method="post">
                     <input type="hidden" name="mascota_id" id="mascota-id">
+                    <input type="hidden" name="mascota_nombre" id="mascota-nombre">
                     <div class="form-group-title">
                         <h3>Datos del adoptante</h3>
                     </div>
@@ -235,52 +236,12 @@
         <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas del mundo.</p>
     </footer>
 
-    <script>
-    (function () {
-        const form = document.getElementById('formAdopcion');
-        const p = new URLSearchParams(location.search);
-        const id = p.get('id');
-        const nombre = p.get('mascota');
-        const tipo = p.get('tipo');
-
-        // Rellenar los datos de la mascota elegida en adopcion.html
-        document.getElementById('mascota-id').value = id || '';
-        if (nombre) document.getElementById('mascota-mente').value = nombre;
-        if (tipo) {
-            const radio = form.querySelector('input[name="tipo_mascota"][value="' + tipo + '"]');
-            if (radio) {
-                radio.checked = true;
-                radio.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-        }
-
-        // Al enviar la solicitud (ya validada), la mascota sale de la página de adopción
-        form.addEventListener('submit', async function (e) {
-            if (!nombre) return;            // no venía desde una tarjeta: envío normal
-            e.preventDefault();
-            try {
-                if (id) {
-                    // Mascota publicada desde el formulario: se elimina de la base de datos
-                    await fetch('../php/guardar_mascota.php', {
-                        method: 'POST',
-                        body: new URLSearchParams({ accion: 'adoptar', id: id })
-                    });
-                } else {
-                    // Mascota fija del HTML: se oculta en este navegador
-                    const lista = JSON.parse(localStorage.getItem('mascotasAdoptadas') || '[]');
-                    if (!lista.includes(nombre)) lista.push(nombre);
-                    localStorage.setItem('mascotasAdoptadas', JSON.stringify(lista));
-                }
-            } catch (err) {
-                console.error('No se pudo retirar la mascota de la lista', err);
-            }
-            form.submit();
-        });
-    })();
-    </script>
+    <script src="../js/formulario-adopcion.js"></script>
 
     <!-- conexion a js NO BORRAR y dejar siempre de último -->
+    <script src="../js/formularios.js"></script>
     <script src="../js/formulario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/general.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         terminar("Gracias por postularte. Revisaremos tu solicitud pronto.", "../modules/index.html");
     } else {
-        echo "Error: " . $conn->error;
+        terminar("No se pudo guardar. Intenta de nuevo.", "back", "error");
     }
 }
 ?>

@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         terminar("Tu cita de vacunación quedó registrada.", "../modules/index.html");
     } else {
-        echo "Error: " . $conn->error;
+        terminar("No se pudo guardar. Intenta de nuevo.", "back", "error");
     }
 }
 ?>

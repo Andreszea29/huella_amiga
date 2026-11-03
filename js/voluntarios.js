@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dias = document.querySelectorAll('.days-selector .day-btn.active');
         if (dias.length === 0) {
             e.preventDefault();
-            alert('Selecciona al menos un día de paseo.');
+            Swal.fire({ icon: 'warning', title: 'Falta un día', text: 'Selecciona al menos un día de paseo.', confirmButtonColor: '#28a745' });
             return;
         }
         dias.forEach(b => agregarOculto(form, 'dias[]', b.dataset.dia));
