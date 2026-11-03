@@ -1,6 +1,31 @@
 <?php
 require("conexion.php");
 
+// ---- LISTAR: devuelve las mascotas publicadas en JSON (lo usa adopcion.html) ----
+if ($_SERVER["REQUEST_METHOD"] == "GET" && ($_GET['accion'] ?? '') === 'listar') {
+    header('Content-Type: application/json; charset=utf-8');
+    $res = $conn->query("SELECT id, nombre_mascota, raza_mascota, tipo_mascota, edad_mascota, temperamento
+                         FROM mascotas ORDER BY id DESC");
+    $mascotas = [];
+    if ($res) {
+        while ($fila = $res->fetch_assoc()) { $mascotas[] = $fila; }
+    }
+    echo json_encode($mascotas);
+    exit;
+}
+
+// ---- ADOPTAR: elimina la mascota de la base de datos ----
+if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST['accion'] ?? '') === 'adoptar') {
+    header('Content-Type: application/json; charset=utf-8');
+    $id = intval($_POST['id'] ?? 0);
+    $stmt = $conn->prepare("DELETE FROM mascotas WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    echo json_encode(['ok' => $stmt->affected_rows > 0]);
+    exit;
+}
+
+// ---- GUARDAR: publicar una mascota nueva (formulario) ----
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre_mascota = limpiar($conn, 'nombre-mascota');
     $raza_mascota = limpiar($conn, 'raza-mascota');
@@ -25,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ($usuario_id, '$nombre_mascota', '$raza_mascota', '$tipo_mascota', '$edad_mascota', '$peso_mascota', '$sexo', '$tamano', '$esterilizado', '$vacunas', '$temperamento', '$descripcion', '$nombre_contacto', '$correo_contacto', '$telefono_contacto', '$ciudad_contacto', '$motivo', '$confirmaciones')";
 
     if ($conn->query($sql) === TRUE) {
-        terminar("Mascota enviada. La revisaremos en 48 horas.", "../modules/adopcion.html");
+        terminar("Mascota enviada. Ya aparece en la página de adopción.", "../modules/adopcion.html");
     } else {
         echo "Error: " . $conn->error;
     }

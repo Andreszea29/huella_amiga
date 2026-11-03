@@ -49,7 +49,7 @@
             </div>
         </section>
 
-        <section class="pets-grid">
+        <section class="pets-grid" id="pets-grid">
             <div class="pet-card" data-tipo="perro">
                 <div class="card-image">
                     <button type="button" class="fav-btn active">❤️</button>
@@ -63,7 +63,7 @@
                         </div>
                         <span class="age-badge">2 meses</span>
                     </div>
-                    <button type="button" onclick="adoptarMascota('Luna')" class="btn-adopt">Adoptar</button>
+                    <button type="button" class="btn-adopt">Adoptar</button>
                 </div>
             </div>
 
@@ -80,7 +80,7 @@
                         </div>
                         <span class="age-badge">3 meses</span>
                     </div>
-                    <button type="button" onclick="adoptarMascota('Simba')" class="btn-adopt">Adoptar</button>
+                    <button type="button" class="btn-adopt">Adoptar</button>
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
                         </div>
                         <span class="age-badge">1 año</span>
                     </div>
-                    <button type="button" onclick="adoptarMascota('Pico')" class="btn-adopt">Adoptar</button>
+                    <button type="button" class="btn-adopt">Adoptar</button>
                 </div>
             </div>
 
@@ -114,7 +114,7 @@
                         </div>
                         <span class="age-badge">5 meses</span>
                     </div>
-                    <button type="button" onclick="adoptarMascota('Copito')" class="btn-adopt">Adoptar</button>
+                    <button type="button" class="btn-adopt">Adoptar</button>
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
                         </div>
                         <span class="age-badge">4 meses</span>
                     </div>
-                    <button type="button" onclick="adoptarMascota('Milo')" class="btn-adopt">Adoptar</button>
+                    <button type="button" class="btn-adopt">Adoptar</button>
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
                         </div>
                         <span class="age-badge">6 meses</span>
                     </div>
-                    <button type="button" onclick="adoptarMascota('Kiwi')" class="btn-adopt">Adoptar</button>
+                    <button type="button" class="btn-adopt">Adoptar</button>
                 </div>
             </div>
         </section>
@@ -165,6 +165,139 @@
         <p class="footer-contact">Asistencia o dudas adicionales: soporte@huellas.org | Teléfono de contacto: +51 999 888 777</p>
         <p class="footer-copy">© 2026 Huellas Rescate y Cuidado. Hecho con amor y compromiso para todas las mascotas sin hogar.</p>
     </footer>
+
+    <script>
+    const API = '../php/guardar_mascota.php';
+    const grid = document.getElementById('pets-grid');
+    const buscador = document.getElementById('buscador');
+    const sinResultados = document.getElementById('sin-resultados');
+    const EMOJI = { perro:'🐕', gato:'🐱', ave:'🦜', hamster:'🐹', otro:'🐾' };
+    let filtroActual = 'todos';
+
+    function esc(s) {
+        return String(s ?? '').replace(/[&<>"']/g, c =>
+            ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    // Las mascotas fijas del HTML se recuerdan como adoptadas en este navegador
+    function leerAdoptadas() {
+        try { return JSON.parse(localStorage.getItem('mascotasAdoptadas') || '[]'); }
+        catch (e) { return []; }
+    }
+    function guardarAdoptada(nombre) {
+        try {
+            const lista = leerAdoptadas();
+            lista.push(nombre);
+            localStorage.setItem('mascotasAdoptadas', JSON.stringify(lista));
+        } catch (e) {}
+    }
+    const adoptadas = leerAdoptadas();
+    grid.querySelectorAll('.pet-card').forEach(card => {
+        if (adoptadas.includes(card.querySelector('h3').textContent)) card.remove();
+    });
+
+    function crearTarjeta(m) {
+        const busqueda = [m.nombre_mascota, m.raza_mascota, m.edad_mascota, m.temperamento].join(' ').toLowerCase();
+        const div = document.createElement('div');
+        div.className = 'pet-card';
+        div.dataset.tipo = m.tipo_mascota;
+        div.dataset.id = m.id;
+        div.dataset.busqueda = busqueda;
+        div.innerHTML = `
+            <div class="card-image">
+                <button type="button" class="fav-btn">🤍</button>
+                <div style="height:100%;min-height:220px;display:flex;align-items:center;justify-content:center;font-size:80px;background:#f3f3f3;">${EMOJI[m.tipo_mascota] || '🐾'}</div>
+            </div>
+            <div class="card-info">
+                <div class="card-header">
+                    <div>
+                        <h3>${esc(m.nombre_mascota)}</h3>
+                        <p class="breed">${esc(m.raza_mascota)}</p>
+                    </div>
+                    <span class="age-badge">${esc(m.edad_mascota)}</span>
+                </div>
+                <button type="button" class="btn-adopt">Adoptar</button>
+            </div>`;
+        return div;
+    }
+
+    function aplicarFiltros() {
+        const texto = buscador.value.trim().toLowerCase();
+        let visibles = 0;
+        grid.querySelectorAll('.pet-card').forEach(card => {
+            const okTipo = filtroActual === 'todos' || card.dataset.tipo === filtroActual;
+            const contenido = card.dataset.busqueda || card.textContent.toLowerCase();
+            const mostrar = okTipo && contenido.includes(texto);
+            card.style.display = mostrar ? '' : 'none';
+            if (mostrar) visibles++;
+        });
+        sinResultados.hidden = visibles > 0;
+    }
+
+    // Mascotas publicadas desde el formulario (vienen de la base de datos)
+    async function cargarPublicadas() {
+        try {
+            const r = await fetch(API + '?accion=listar');
+            const mascotas = await r.json();
+            grid.querySelectorAll('.pet-card[data-id]').forEach(c => c.remove());
+            mascotas.forEach(m => grid.prepend(crearTarjeta(m)));
+            aplicarFiltros();
+        } catch (e) {
+            console.error('No se pudieron cargar las mascotas publicadas', e);
+        }
+    }
+
+    grid.addEventListener('click', async e => {
+        // Favoritos de las tarjetas nuevas (las fijas ya los manejan tus otros JS)
+        const fav = e.target.closest('.fav-btn');
+        if (fav) {
+            if (fav.closest('.pet-card').dataset.id) {
+                fav.classList.toggle('active');
+                fav.textContent = fav.classList.contains('active') ? '❤️' : '🤍';
+            }
+            return;
+        }
+
+        const btn = e.target.closest('.btn-adopt');
+        if (!btn) return;
+        const card = btn.closest('.pet-card');
+        const nombre = card.querySelector('h3').textContent;
+        if (!confirm(`¿Quieres adoptar a ${nombre}?`)) return;
+
+        if (card.dataset.id) {
+            const datos = new URLSearchParams({ accion: 'adoptar', id: card.dataset.id });
+            try {
+                const r = await fetch(API, { method: 'POST', body: datos });
+                const res = await r.json();
+                if (!res.ok) {
+                    alert('Esta mascota ya fue adoptada.');
+                    cargarPublicadas();
+                    return;
+                }
+            } catch (err) {
+                alert('No se pudo completar la adopción. Intenta de nuevo.');
+                return;
+            }
+        } else {
+            guardarAdoptada(nombre);
+        }
+        card.remove();
+        aplicarFiltros();
+        alert(`¡Felicidades! Adoptaste a ${nombre} 🐾`);
+    });
+
+    document.querySelectorAll('.filter-tags .tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+            document.querySelectorAll('.filter-tags .tag').forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            filtroActual = tag.dataset.filtro;
+            aplicarFiltros();
+        });
+    });
+    buscador.addEventListener('input', aplicarFiltros);
+
+    cargarPublicadas();
+    </script>
 
     <script src="../js/formulario.js"></script>
     <script src="../js/general.js"></script>
