@@ -179,17 +179,10 @@
             ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
 
-    // Las mascotas fijas del HTML se recuerdan como adoptadas en este navegador
+    // Las mascotas fijas que ya fueron adoptadas (lo registra formulario-adopcion.html) se ocultan
     function leerAdoptadas() {
         try { return JSON.parse(localStorage.getItem('mascotasAdoptadas') || '[]'); }
         catch (e) { return []; }
-    }
-    function guardarAdoptada(nombre) {
-        try {
-            const lista = leerAdoptadas();
-            lista.push(nombre);
-            localStorage.setItem('mascotasAdoptadas', JSON.stringify(lista));
-        } catch (e) {}
     }
     const adoptadas = leerAdoptadas();
     grid.querySelectorAll('.pet-card').forEach(card => {
@@ -247,7 +240,7 @@
         }
     }
 
-    grid.addEventListener('click', async e => {
+    grid.addEventListener('click', e => {
         // Favoritos de las tarjetas nuevas (las fijas ya los manejan tus otros JS)
         const fav = e.target.closest('.fav-btn');
         if (fav) {
@@ -261,29 +254,12 @@
         const btn = e.target.closest('.btn-adopt');
         if (!btn) return;
         const card = btn.closest('.pet-card');
-        const nombre = card.querySelector('h3').textContent;
-        if (!confirm(`¿Quieres adoptar a ${nombre}?`)) return;
-
-        if (card.dataset.id) {
-            const datos = new URLSearchParams({ accion: 'adoptar', id: card.dataset.id });
-            try {
-                const r = await fetch(API, { method: 'POST', body: datos });
-                const res = await r.json();
-                if (!res.ok) {
-                    alert('Esta mascota ya fue adoptada.');
-                    cargarPublicadas();
-                    return;
-                }
-            } catch (err) {
-                alert('No se pudo completar la adopción. Intenta de nuevo.');
-                return;
-            }
-        } else {
-            guardarAdoptada(nombre);
-        }
-        card.remove();
-        aplicarFiltros();
-        alert(`¡Felicidades! Adoptaste a ${nombre} 🐾`);
+        const params = new URLSearchParams({
+            mascota: card.querySelector('h3').textContent,
+            tipo: card.dataset.tipo || ''
+        });
+        if (card.dataset.id) params.set('id', card.dataset.id);
+        window.location.href = 'formulario-adopcion.html?' + params.toString();
     });
 
     document.querySelectorAll('.filter-tags .tag').forEach(tag => {
